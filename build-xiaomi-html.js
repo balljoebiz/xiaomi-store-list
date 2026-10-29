@@ -13,7 +13,8 @@
  *   3. 資料僅有中文（API 無英文語系），故不做中英雙語卡
  *   4. 店名共用前綴「小米之家中國（香港）」→ 卡片精簡顯示，全名保留於 title
  *   5. 營業時間為「星期一 10:30-20:30、星期二 …」逐日字串 → 壓縮成「星期一至五」區間
- *   6. 分區（沙田區／觀塘區…）藏在地址倒數第三段 → 解析出來獨立分組
+ *   6. 分區（沙田區／觀塘區…）藏在地址倒數第三段 → 解析出來只當卡片標示與篩選選項，
+ *      主頁版面**只分香港島／九龍／新界**，不按分區切子標題（16 個分區會碎成 1–2 間一組）
  */
 'use strict';
 
@@ -231,7 +232,7 @@ async function main() {
     <span class="open-badge" data-hours="${esc(JSON.stringify(r.hoursGroups))}" aria-live="polite"></span>
   </div>
   <h4 class="store-name" title="${esc(r.name)}">${esc(short || r.shortName)}</h4>
-  <div class="store-addr" title="${esc(r.fullAddress)}">${esc(r.address)}</div>
+  <div class="store-addr" title="${esc(r.fullAddress)}"><span class="district">${esc(r.district)}</span>${esc(r.address)}</div>
   <div class="store-hours"><span class="k">營業時間</span>${esc(r.hours)}</div>
   <div class="store-foot">
     <span class="store-phone">${phoneLinks}</span>
@@ -243,13 +244,12 @@ async function main() {
   };
 
   const regionBlocks = regions.map((rg) => {
-    const districtBlocks = rg.districts.map((d) => `<div class="subgroup" data-district-group="${esc(d.district)}">
-  <h3>${esc(d.district)} <span class="count">${d.stores.length}</span></h3>
-  <div class="stores">${d.stores.map(card).join('\n')}</div>
-</div>`).join('\n');
+    // 主頁只按「香港島 / 九龍 / 新界」三段呈現，不再往下切成 16 個分區子標題。
+    // 分區資訊保留在卡片地址前的標籤與「分區」篩選選項，不作為版面的分組層級。
+    const stores = rg.districts.flatMap((d) => d.stores);
     return `<section class="region" id="region-${esc(rg.region)}" data-region-section="${esc(rg.region)}">
   <h2>${esc(rg.region)} <span class="count">${rg.total}</span></h2>
-${districtBlocks}
+  <div class="stores">${stores.map(card).join('\n')}</div>
 </section>`;
   }).join('\n');
 
@@ -336,10 +336,7 @@ main { flex:1 1 auto; min-width:0; }
 .region { margin-bottom:2.4rem; }
 .region > h2 { font-size:1.3rem; border-bottom:2px solid var(--primary); padding-bottom:.3rem; margin-bottom:.5rem; }
 .count { color:var(--muted); font-weight:400; font-size:.86rem; }
-.subgroup { margin:.7rem 0 1.1rem; }
-.subgroup h3 { font-size:.98rem; margin-bottom:.45rem; display:flex; align-items:baseline; gap:.4rem; }
-.subgroup h3::before { content:""; width:3px; height:.92em; background:var(--primary); border-radius:2px; transform:translateY(1px); }
-.stores { display:grid; grid-template-columns:repeat(auto-fill,minmax(332px,1fr)); gap:.7rem; }
+.stores { display:grid; grid-template-columns:repeat(auto-fill,minmax(332px,1fr)); gap:.7rem; margin-top:.7rem; }
 /* ── 卡片 ── */
 .store-card { background:var(--card); border:1px solid var(--border); border-radius:.55rem; padding:.7rem .8rem; display:flex; flex-direction:column; gap:.32rem; scroll-margin-top:132px; }
 .store-card.is-direct { border-color:var(--primary); box-shadow:inset 3px 0 0 var(--primary); }
@@ -352,6 +349,7 @@ main { flex:1 1 auto; min-width:0; }
 .open-badge.on { color:#fff; background:var(--ok); border-color:var(--ok); }
 .store-name { font-size:.95rem; font-weight:700; line-height:1.35; }
 .store-addr { color:var(--muted); font-size:.84rem; }
+.store-addr .district { display:inline-block; border:1px solid var(--border); border-radius:.22rem; padding:0 .26rem; margin-right:.35rem; font-size:.74rem; }
 .store-hours { font-size:.84rem; }
 .store-hours .k { color:var(--muted); font-size:.72rem; margin-right:.35rem; }
 .store-foot { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; margin-top:.1rem; font-size:.8rem; }
@@ -443,7 +441,6 @@ ${regionBlocks}
   var storeNoSel = $('f-storeno'), typeSel = $('f-type'), regionSel = $('f-region'), districtSel = $('f-district'), qInput = $('f-q');
   var resetBtn = $('f-reset'), countEl = $('f-count'), emptyEl = $('empty');
   var cards = [].slice.call(document.querySelectorAll('.store-card'));
-  var subgroups = [].slice.call(document.querySelectorAll('.subgroup'));
   var sections = [].slice.call(document.querySelectorAll('.region'));
   var sideItems = [].slice.call(document.querySelectorAll('.side-item'));
   var sideGroups = [].slice.call(document.querySelectorAll('.side-group'));
@@ -503,9 +500,6 @@ ${regionBlocks}
                (!q || card.getAttribute('data-search').indexOf(q) !== -1);
       card.hidden = !ok;
       if (ok) { shown++; visible[card.getAttribute('data-id')] = true; }
-    });
-    subgroups.forEach(function (g) {
-      g.hidden = !g.querySelector('.store-card:not([hidden])');
     });
     sections.forEach(function (s) {
       s.hidden = !s.querySelector('.store-card:not([hidden])');
