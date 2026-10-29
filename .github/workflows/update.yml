@@ -1,0 +1,41 @@
+name: Update Xiaomi HK store list
+
+on:
+  schedule:
+    # 香港時間 13:31（UTC+8）。固定時間最穩：GitHub 排程本身可能延遲數十分鐘，
+    # 若用「隨機時段 + 每小時判斷」，很容易整天錯過目標時段而連續多日不更新。
+    - cron: '31 5 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-xiaomi-stores
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build store page
+        run: node build-xiaomi-html.js
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- index.html xiaomi-stores.json; then
+            echo "資料未變，不產生 commit。"
+            exit 0
+          fi
+          COUNT=$(node -e "console.log(require('./xiaomi-stores.json').count)")
+          git add index.html xiaomi-stores.json
+          git commit -m "更新小米之家門市資料（${COUNT} 間）"
+          git push
