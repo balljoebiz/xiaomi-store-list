@@ -1,0 +1,1671 @@
+{
+  "updatedAt": "2026-10-30T04:12:02.061Z",
+  "closedAfterDays": 30,
+  "stores": {
+    "MIHK00001": {
+      "storeNo": "MIHK00001",
+      "id": "MIHK00001",
+      "name": "小米之家中國（香港）旺角創興廣場店",
+      "shortName": "旺角創興廣場店",
+      "type": "直營店",
+      "typeKey": "direct",
+      "region": "九龍",
+      "district": "油尖旺區",
+      "address": "旺角彌敦道601號創興廣場地下D-F鋪",
+      "fullAddress": "旺角彌敦道601號創興廣場地下D-F鋪，油尖旺區，九龍，香港",
+      "phones": [
+        "+852 2698 8871"
+      ],
+      "hours": "星期一至日 11:00-22:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "22:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.316197,
+        "lng": 114.16977
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.316197,114.16977",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/MIHK00001",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "21e2e0085295bb2c"
+    },
+    "MIHK00002": {
+      "storeNo": "MIHK00002",
+      "id": "MIHK00002",
+      "name": "小米之家中國（香港）銅鑼灣怡和街店",
+      "shortName": "銅鑼灣怡和街店",
+      "type": "直營店",
+      "typeKey": "direct",
+      "region": "香港島",
+      "district": "灣仔區",
+      "address": "銅鑼灣怡和街42-44號華人銀行東區大廈地下",
+      "fullAddress": "銅鑼灣怡和街42-44號華人銀行東區大廈地下，灣仔區，香港島，香港",
+      "phones": [
+        "+852 54963835"
+      ],
+      "hours": "星期一至日 11:00-22:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "22:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.279611,
+        "lng": 114.185713
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.279611,114.185713",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/MIHK00002",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "5fa0670b3659e11e"
+    },
+    "MIHK00003": {
+      "storeNo": "MIHK00003",
+      "id": "MIHK00003",
+      "name": "小米之家中國（香港）元朗YOHO MALL店",
+      "shortName": "元朗YOHO MALL店",
+      "type": "直營店",
+      "typeKey": "direct",
+      "region": "新界",
+      "district": "元朗區",
+      "address": "元朗朗日路8-9號及元龍街9號YOHO MALL II (形點II) 一樓A102號舖",
+      "fullAddress": "元朗朗日路8-9號及元龍街9號YOHO MALL II (形點II) 一樓A102號舖，元朗區，新界，香港",
+      "phones": [
+        "+852 2333 3310"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.44525,
+        "lng": 114.03485
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.44525,114.03485",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/MIHK00003",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "acaf11b1ae08ad9e"
+    },
+    "SQHK00001": {
+      "storeNo": "SQHK00001",
+      "id": "SQHK00001",
+      "name": "小米之家中國（香港）油塘大本型授權店",
+      "shortName": "油塘大本型授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "觀塘區",
+      "address": "油塘高超道38號大本型商場L1層104-105鋪位",
+      "fullAddress": "油塘高超道38號大本型商場L1層104-105鋪位，觀塘區，九龍，香港",
+      "phones": [
+        "+852 3612 2653"
+      ],
+      "hours": "星期一至五 11:00-21:00（星期六至日未提供）",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.296194,
+        "lng": 114.23839
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.296194,114.23839",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00001",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "b8fbc4fe3e0b2347"
+    },
+    "SQHK00002": {
+      "storeNo": "SQHK00002",
+      "id": "SQHK00002",
+      "name": "小米之家中國（香港）THE LOHAS康城授權店",
+      "shortName": "THE LOHAS康城授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "西貢區",
+      "address": "將軍澳康城路1號THE LOHAS康城 3/F SHOP 351",
+      "fullAddress": "將軍澳康城路1號THE LOHAS康城 3/F SHOP 351，西貢區，新界，香港",
+      "phones": [
+        "+852 23180836"
+      ],
+      "hours": "星期一至五 11:00-21:00（星期六至日未提供）",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.296408,
+        "lng": 114.270558
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.296408,114.270558",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00002",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "a14ad1f70b5576a0"
+    },
+    "SQHK00003": {
+      "storeNo": "SQHK00003",
+      "id": "SQHK00003",
+      "name": "小米之家中國（香港）屯門區屯門市廣場授權店",
+      "shortName": "屯門區屯門市廣場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "屯門區",
+      "address": "屯門屯盛街1號屯門市廣場1期2樓2065-2066號舖",
+      "fullAddress": "屯門屯盛街1號屯門市廣場1期2樓2065-2066號舖，屯門區，新界，香港",
+      "phones": [
+        "+852 3996 9156"
+      ],
+      "hours": "星期一至五 11:00-21:00（星期六至日未提供）",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.392723,
+        "lng": 113.977083
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.392723,113.977083",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00003",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "acc4c82d77e23f73"
+    },
+    "SQHK00004": {
+      "storeNo": "SQHK00004",
+      "id": "SQHK00004",
+      "name": "小米之家中國（香港）鑽石山荷里活廣場授權店",
+      "shortName": "鑽石山荷里活廣場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "黃大仙區",
+      "address": "鑽石山龍蟠街3號荷里活廣場2樓256B-257號鋪",
+      "fullAddress": "鑽石山龍蟠街3號荷里活廣場2樓256B-257號鋪，黃大仙區，九龍，香港",
+      "phones": [
+        "+852 3188 1593"
+      ],
+      "hours": "星期一至五 11:00-21:00（星期六至日未提供）",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.340507,
+        "lng": 114.201998
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.340507,114.201998",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00004",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "9948dd2d5d3b4ff8"
+    },
+    "SQHK00005": {
+      "storeNo": "SQHK00005",
+      "id": "SQHK00005",
+      "name": "小米之家中國（香港）天水圍T Town授權店",
+      "shortName": "天水圍T Town授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "元朗區",
+      "address": "天水圍天華路30號天頌苑T Town南館2樓S219號舖",
+      "fullAddress": "天水圍天華路30號天頌苑T Town南館2樓S219號舖，元朗區，新界，香港",
+      "phones": [
+        "+852 3188 9550"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.46157,
+        "lng": 113.997453
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.46157,113.997453",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00005",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "fcd283f63ce70778"
+    },
+    "SQHK00006": {
+      "storeNo": "SQHK00006",
+      "id": "SQHK00006",
+      "name": "小米之家中國（香港）葵芳新都會廣場授權店",
+      "shortName": "葵芳新都會廣場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "葵青區",
+      "address": "葵芳興芳路223號新都會廣場4樓494-496號鋪",
+      "fullAddress": "葵芳興芳路223號新都會廣場4樓494-496號鋪，葵青區，新界，香港",
+      "phones": [
+        "+852 3709 2163"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.357433,
+        "lng": 114.12619
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.357433,114.12619",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00006",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "bd7d6ec30d933928"
+    },
+    "SQHK00007": {
+      "storeNo": "SQHK00007",
+      "id": "SQHK00007",
+      "name": "小米之家中國（香港）寶琳新都城中心授權店",
+      "shortName": "寶琳新都城中心授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "西貢區",
+      "address": "將軍澳欣景路8號新都城中心二期 1103-04號鋪",
+      "fullAddress": "將軍澳欣景路8號新都城中心二期 1103-04號鋪，西貢區，新界，香港",
+      "phones": [
+        "+852 35203082"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.324136,
+        "lng": 114.257187
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.324136,114.257187",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00007",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "daceddcfb2f8792c"
+    },
+    "SQHK00008": {
+      "storeNo": "SQHK00008",
+      "id": "SQHK00008",
+      "name": "小米之家中國（香港）大埔區大埔超級城授權店",
+      "shortName": "大埔區大埔超級城授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "大埔區",
+      "address": "大埔安邦路8-10號大埔超級城B區2樓238B",
+      "fullAddress": "大埔安邦路8-10號大埔超級城B區2樓238B，大埔區，新界，香港",
+      "phones": [
+        "+852 2346 8328"
+      ],
+      "hours": "星期一至五 11:00-21:00（星期六至日未提供）",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.451673,
+        "lng": 114.170131
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.451673,114.170131",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00008",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "bd8d8bdd2ea52228"
+    },
+    "SQHK00009": {
+      "storeNo": "SQHK00009",
+      "id": "SQHK00009",
+      "name": "小米之家中國（香港）坑口東港城授權店",
+      "shortName": "坑口東港城授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "西貢區",
+      "address": "將軍澳坑口東港城1樓129A至129B號鋪",
+      "fullAddress": "將軍澳坑口東港城1樓129A至129B號鋪，西貢區，新界，香港",
+      "phones": [
+        "+852 2349 8288"
+      ],
+      "hours": "星期一至五 11:00-21:00（星期六至日未提供）",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.316997,
+        "lng": 114.265428
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.316997,114.265428",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00009",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "61ecf6c6aea7b57e"
+    },
+    "SQHK00010": {
+      "storeNo": "SQHK00010",
+      "id": "SQHK00010",
+      "name": "小米之家中國（香港）荃灣區荃灣廣場授權店",
+      "shortName": "荃灣區荃灣廣場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "荃灣區",
+      "address": "荃灣大壩街4號荃灣廣場2樓271號鋪",
+      "fullAddress": "荃灣大壩街4號荃灣廣場2樓271號鋪，荃灣區，新界，香港",
+      "phones": [
+        "+852 2346 8555"
+      ],
+      "hours": "星期一至五 11:00-21:00（星期六至日未提供）",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.370821,
+        "lng": 114.111227
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.370821,114.111227",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00010",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "85a255573aa6b086"
+    },
+    "SQHK00011": {
+      "storeNo": "SQHK00011",
+      "id": "SQHK00011",
+      "name": "小米之家中國（香港）黃大仙區黃大仙中心授權店",
+      "shortName": "黃大仙區黃大仙中心授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "黃大仙區",
+      "address": "黃大仙龍翔道136號黃大仙中心北館地下G02B及G03A號鋪",
+      "fullAddress": "黃大仙龍翔道136號黃大仙中心北館地下G02B及G03A號鋪，黃大仙區，九龍，香港",
+      "phones": [
+        "+852 2346 8788"
+      ],
+      "hours": "星期一至五 11:00-21:00（星期六至日未提供）",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.341908,
+        "lng": 114.192864
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.341908,114.192864",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00011",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "d287468300671db3"
+    },
+    "SQHK00012": {
+      "storeNo": "SQHK00012",
+      "id": "SQHK00012",
+      "name": "小米之家中國（香港）觀塘APM授權店",
+      "shortName": "觀塘APM授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "觀塘區",
+      "address": "觀塘道418號創紀之城五期APM商場3樓L3-7號鋪",
+      "fullAddress": "觀塘道418號創紀之城五期APM商場3樓L3-7號鋪，觀塘區，九龍，香港",
+      "phones": [
+        "+852 36196487"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.312401,
+        "lng": 114.225222
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.312401,114.225222",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00012",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "7f5c6f339d607485"
+    },
+    "SQHK00013": {
+      "storeNo": "SQHK00013",
+      "id": "SQHK00013",
+      "name": "小米之家中國（香港）奧運奧海城授權店",
+      "shortName": "奧運奧海城授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "油尖旺區",
+      "address": "海庭道18號奧海城2期UG/F SHOP UG69A2",
+      "fullAddress": "海庭道18號奧海城2期UG/F SHOP UG69A2，油尖旺區，九龍，香港",
+      "phones": [
+        "+852 28027233"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.316735,
+        "lng": 114.161592
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.316735,114.161592",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00013",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "0009fa0ab14c587c"
+    },
+    "SQHK00014": {
+      "storeNo": "SQHK00014",
+      "id": "SQHK00014",
+      "name": "小米之家中國（香港）尖沙咀美麗華廣場授權店",
+      "shortName": "尖沙咀美麗華廣場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "油尖旺區",
+      "address": "尖沙咀金巴利道9號美麗華廣場一期1樓Shop112號舖",
+      "fullAddress": "尖沙咀金巴利道9號美麗華廣場一期1樓Shop112號舖，油尖旺區，九龍，香港",
+      "phones": [
+        "+852 28331089"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.300713,
+        "lng": 114.172755
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.300713,114.172755",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00014",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "870871a98bf690bb"
+    },
+    "SQHK00015": {
+      "storeNo": "SQHK00015",
+      "id": "SQHK00015",
+      "name": "小米之家中國（香港）藍田啟田商場授權店",
+      "shortName": "藍田啟田商場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "觀塘區",
+      "address": "藍田啟田商場2樓204號舖",
+      "fullAddress": "藍田啟田商場2樓204號舖，觀塘區，九龍，香港",
+      "phones": [
+        "+852 61927495"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.309093,
+        "lng": 114.234359
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.309093,114.234359",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00015",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "2f64e08b5a4dd61c"
+    },
+    "SQHK00016": {
+      "storeNo": "SQHK00016",
+      "id": "SQHK00016",
+      "name": "小米之家中國（香港）黃大仙區樂富廣場授權店",
+      "shortName": "黃大仙區樂富廣場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "黃大仙區",
+      "address": "黄大仙樂富聯合道198號樂富廣場2期UG層U103號舖",
+      "fullAddress": "黄大仙樂富聯合道198號樂富廣場2期UG層U103號舖，黃大仙區，九龍，香港",
+      "phones": [
+        "+852 34602002"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.338324,
+        "lng": 114.187232
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.338324,114.187232",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00016",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "71926a14c12035d6"
+    },
+    "SQHK00017": {
+      "storeNo": "SQHK00017",
+      "id": "SQHK00017",
+      "name": "小米之家中國（香港）沙田新城市廣場授權店",
+      "shortName": "沙田新城市廣場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "沙田區",
+      "address": "新城市廣場1期6樓Shop 614號舖",
+      "fullAddress": "新城市廣場1期6樓Shop 614號舖，沙田區，新界，香港",
+      "phones": [
+        "+852 53376160"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.381617,
+        "lng": 114.188601
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.381617,114.188601",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00017",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "912593d357e41d9d"
+    },
+    "SQHK00018": {
+      "storeNo": "SQHK00018",
+      "id": "SQHK00018",
+      "name": "小米之家中國（香港）杏花邨杏花新城授權店",
+      "shortName": "杏花邨杏花新城授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "香港島",
+      "district": "東區",
+      "address": "柴灣盛泰道100號杏花新城203D號舖",
+      "fullAddress": "柴灣盛泰道100號杏花新城203D號舖，東區，香港島，香港",
+      "phones": [
+        "+852 28332901"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.27763,
+        "lng": 114.238939
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.27763,114.238939",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00018",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "a12c67ee3b80ab8c"
+    },
+    "SQHK00019": {
+      "storeNo": "SQHK00019",
+      "id": "SQHK00019",
+      "name": "小米之家中國（香港）將軍澳POPCORN授權店",
+      "shortName": "將軍澳POPCORN授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "西貢區",
+      "address": "將軍澳唐賢街9號POPCORN1樓F59號舖",
+      "fullAddress": "將軍澳唐賢街9號POPCORN1樓F59號舖，西貢區，新界，香港",
+      "phones": [
+        "+852 34602027"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.307805,
+        "lng": 114.259547
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.307805,114.259547",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00019",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "e73f354c554a9a9f"
+    },
+    "SQHK00020": {
+      "storeNo": "SQHK00020",
+      "id": "SQHK00020",
+      "name": "小米之家中國（香港）南昌V WALK授權店",
+      "shortName": "南昌V WALK授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "深水埗區",
+      "address": "深旺道28號V WALK 2樓L2-27&28號舖",
+      "fullAddress": "深旺道28號V WALK 2樓L2-27&28號舖，深水埗區，九龍，香港",
+      "phones": [
+        "+852 35638429"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.327084,
+        "lng": 114.154394
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.327084,114.154394",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00020",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "87bfacc5bbed0131"
+    },
+    "SQHK00021": {
+      "storeNo": "SQHK00021",
+      "id": "SQHK00021",
+      "name": "小米之家中國（香港）元朗鈞德樓授權店",
+      "shortName": "元朗鈞德樓授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "元朗區",
+      "address": "康景街2-20號鈞德樓地下13號舖",
+      "fullAddress": "康景街2-20號鈞德樓地下13號舖，元朗區，新界，香港",
+      "phones": [
+        "+852 24780233"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.443745,
+        "lng": 114.027569
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.443745,114.027569",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00021",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "fc2c9baa0ddff79f"
+    },
+    "SQHK00022": {
+      "storeNo": "SQHK00022",
+      "id": "SQHK00022",
+      "name": "小米之家中國（香港）馬鞍山新港城中心授權店",
+      "shortName": "馬鞍山新港城中心授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "沙田區",
+      "address": "馬鞍山鞍祿街18號新港城中心2樓2216號舖",
+      "fullAddress": "馬鞍山鞍祿街18號新港城中心2樓2216號舖，沙田區，新界，香港",
+      "phones": [
+        "+852 24780088"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.424163,
+        "lng": 114.231468
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.424163,114.231468",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00022",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "5f12699c6cb98e68"
+    },
+    "SQHK00023": {
+      "storeNo": "SQHK00023",
+      "id": "SQHK00023",
+      "name": "小米之家中國（香港）粉嶺名都商場授權店",
+      "shortName": "粉嶺名都商場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "北區",
+      "address": "粉嶺車站路18號名都商場 2/F SHOP7&8號舖",
+      "fullAddress": "粉嶺車站路18號名都商場 2/F SHOP7&8號舖，北區，新界，香港",
+      "phones": [
+        "+852 23312269"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.492385,
+        "lng": 114.138897
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.492385,114.138897",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00023",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "ed1b6ec8a7b35d4c"
+    },
+    "SQHK00024": {
+      "storeNo": "SQHK00024",
+      "id": "SQHK00024",
+      "name": "小米之家中國（香港）上水新都廣場授權店",
+      "shortName": "上水新都廣場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "北區",
+      "address": "上水龍運街8號新都廣場2樓Shop 202-207A號舖",
+      "fullAddress": "上水龍運街8號新都廣場2樓Shop 202-207A號舖，北區，新界，香港",
+      "phones": [
+        "+852 22612188"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.502066,
+        "lng": 114.129279
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.502066,114.129279",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00024",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "6b332bfb100c9768"
+    },
+    "SQHK00025": {
+      "storeNo": "SQHK00025",
+      "id": "SQHK00025",
+      "name": "小米之家中國（香港）九龍灣德福廣場授權店",
+      "shortName": "九龍灣德福廣場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "觀塘區",
+      "address": "九龍灣德福廣場1期地下G91號舖",
+      "fullAddress": "九龍灣德福廣場1期地下G91號舖，觀塘區，九龍，香港",
+      "phones": [
+        "+852 26213200"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.324548,
+        "lng": 114.213324
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.324548,114.213324",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00025",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "59bc7c04e1234e66"
+    },
+    "SQHK00026": {
+      "storeNo": "SQHK00026",
+      "id": "SQHK00026",
+      "name": "小米之家中國（香港）荃灣悅來坊授權店",
+      "shortName": "荃灣悅來坊授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "荃灣區",
+      "address": "荃華街3號悅來坊G層G5號舖",
+      "fullAddress": "荃華街3號悅來坊G層G5號舖，荃灣區，新界，香港",
+      "phones": [
+        "+852 27891333"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.36885,
+        "lng": 114.120893
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.36885,114.120893",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00026",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "f8af964a3144377a"
+    },
+    "SQHK00027": {
+      "storeNo": "SQHK00027",
+      "id": "SQHK00027",
+      "name": "小米之家中國（香港）葵青區青衣城授權店",
+      "shortName": "葵青區青衣城授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "葵青區",
+      "address": "青衣青敬路31號青衣城3樓303號舖",
+      "fullAddress": "青衣青敬路31號青衣城3樓303號舖，葵青區，新界，香港",
+      "phones": [
+        "+852 63196776"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.358301,
+        "lng": 114.107125
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.358301,114.107125",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00027",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "3b8376b4b40d082d"
+    },
+    "SQHK00031": {
+      "storeNo": "SQHK00031",
+      "id": "SQHK00031",
+      "name": "小米之家中國（香港）啟德雙子匯授權店",
+      "shortName": "啟德雙子匯授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "九龍城區",
+      "address": "啟德沐翠街12號雙子匯2期地下G29舖",
+      "fullAddress": "啟德沐翠街12號雙子匯2期地下G29舖，九龍城區，九龍，香港",
+      "phones": [
+        "+852 28668138"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.331856,
+        "lng": 114.201571
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.331856,114.201571",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00031",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "47b29b4f1b492946"
+    },
+    "SQHK00032": {
+      "storeNo": "SQHK00032",
+      "id": "SQHK00032",
+      "name": "小米之家中國（香港）港島東北角匯授權店",
+      "shortName": "港島東北角匯授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "香港島",
+      "district": "東區",
+      "address": "北角渣華道123號北角匯2期地下G06號鋪",
+      "fullAddress": "北角渣華道123號北角匯2期地下G06號鋪，東區，香港島，香港",
+      "phones": [
+        "+852 29881233"
+      ],
+      "hours": "星期一至日 10:30-20:30",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "10:30",
+          "close": "20:30"
+        }
+      ],
+      "geo": {
+        "lat": 22.292899,
+        "lng": 114.200611
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.292899,114.200611",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00032",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "a7e269cb174aacc2"
+    },
+    "SQHK00033": {
+      "storeNo": "SQHK00033",
+      "id": "SQHK00033",
+      "name": "小米之家中國（香港）九龍灣MegaBox授權店",
+      "shortName": "九龍灣MegaBox授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "觀塘區",
+      "address": "九龍九龍灣宏照道38號企業廣場5期地下G03號鋪",
+      "fullAddress": "九龍九龍灣宏照道38號企業廣場5期地下G03號鋪，觀塘區，九龍，香港",
+      "phones": [
+        "+852 29812999"
+      ],
+      "hours": "星期一至日 10:30-20:30",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "10:30",
+          "close": "20:30"
+        }
+      ],
+      "geo": {
+        "lat": 22.319842,
+        "lng": 114.208528
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.319842,114.208528",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00033",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "e2f65ed2e56f6c2e"
+    },
+    "SQHK00034": {
+      "storeNo": "SQHK00034",
+      "id": "SQHK00034",
+      "name": "小米之家中國（香港）屯門V City授權店",
+      "shortName": "屯門V City授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "屯門區",
+      "address": "屯門屯門鄉事會路83號V City地鐵樓層L2，M-52號鋪",
+      "fullAddress": "屯門屯門鄉事會路83號V City地鐵樓層L2, M-52號鋪，屯門區，新界，香港",
+      "phones": [
+        "+852 36197529"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.395394,
+        "lng": 113.973905
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.395394,113.973905",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00034",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "3f10853bae56d235"
+    },
+    "SQHK00035": {
+      "storeNo": "SQHK00035",
+      "id": "SQHK00035",
+      "name": "小米之家中國（香港）荃灣海之戀商場授權店",
+      "shortName": "荃灣海之戀商場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "荃灣區",
+      "address": "荃灣大河道100號海之戀商場1樓1053號鋪",
+      "fullAddress": "荃灣大河道100號海之戀商場1樓1053號鋪，荃灣區，新界，香港",
+      "phones": [
+        "+852 23609666"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.368071,
+        "lng": 114.110299
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.368071,114.110299",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00035",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "ad3123b4ed80a7a2"
+    },
+    "SQHK00036": {
+      "storeNo": "SQHK00036",
+      "id": "SQHK00036",
+      "name": "小米之家中國（香港）葵涌石蘺商場授權店",
+      "shortName": "葵涌石蘺商場授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "葵青區",
+      "address": "葵涌大隴街110號石蘺商場地下B009號鋪",
+      "fullAddress": "葵涌大隴街110號石蘺商場地下B009號鋪，葵青區，新界，香港",
+      "phones": [
+        "+852 25081333"
+      ],
+      "hours": "星期一至日 10:30-20:30",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "10:30",
+          "close": "20:30"
+        }
+      ],
+      "geo": {
+        "lat": 22.365663,
+        "lng": 114.139197
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.365663,114.139197",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00036",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "9e279a2b4f7d6a38"
+    },
+    "SQHK00037": {
+      "storeNo": "SQHK00037",
+      "id": "SQHK00037",
+      "name": "小米之家中國（香港）港島金鐘廊授權店",
+      "shortName": "港島金鐘廊授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "香港島",
+      "district": "中西區",
+      "address": "金鐘金鐘道93號金鐘廊一樓D07-08號舖",
+      "fullAddress": "金鐘金鐘道93號金鐘廊一樓D07-08號舖，中西區，香港島，香港",
+      "phones": [
+        "+852 35639176"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.278809,
+        "lng": 114.16482
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.278809,114.16482",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00037",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "5073962e66bfa827"
+    },
+    "SQHK00044": {
+      "storeNo": "SQHK00044",
+      "id": "SQHK00044",
+      "name": "小米之家中國（香港）荃灣荃錦中心授權店",
+      "shortName": "荃灣荃錦中心授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "荃灣區",
+      "address": "青山公路荃灣段342號荃錦中心",
+      "fullAddress": "青山公路荃灣段342號荃錦中心，荃灣區，新界，香港",
+      "phones": [
+        "+852 28138198"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.374194,
+        "lng": 114.114564
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.374194,114.114564",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00044",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "e36a4dfcde64be67"
+    },
+    "SQHK00045": {
+      "storeNo": "SQHK00045",
+      "id": "SQHK00045",
+      "name": "小米之家中國（香港）牛頭角The ANGLE授權店",
+      "shortName": "牛頭角The ANGLE授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "九龍",
+      "district": "觀塘區",
+      "address": "觀塘巧明街98號The ANGLE1樓 105&107號舖",
+      "fullAddress": "觀塘巧明街98號The ANGLE1樓 105&107號舖，觀塘區，九龍，香港",
+      "phones": [
+        "+852 35909255"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.31284,
+        "lng": 114.221403
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.31284,114.221403",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00045",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "53e040e0a3167568"
+    },
+    "SQHK00046": {
+      "storeNo": "SQHK00046",
+      "id": "SQHK00046",
+      "name": "小米之家中國（香港）大圍圍方授權店",
+      "shortName": "大圍圍方授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "沙田區",
+      "address": "大圍車公廟路18號圍方3樓330號鋪",
+      "fullAddress": "大圍車公廟路18號圍方3樓330號鋪，沙田區，新界，香港",
+      "phones": [
+        "+852 23122261"
+      ],
+      "hours": "星期一至日 11:00-21:00",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "11:00",
+          "close": "21:00"
+        }
+      ],
+      "geo": {
+        "lat": 22.372586,
+        "lng": 114.179753
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.372586,114.179753",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00046",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "7cb4cf5154b4d4ba"
+    },
+    "SQHK00047": {
+      "storeNo": "SQHK00047",
+      "id": "SQHK00047",
+      "name": "小米之家中國（香港）沙田置富第一城授權店",
+      "shortName": "沙田置富第一城授權店",
+      "type": "授權店",
+      "typeKey": "authorized",
+      "region": "新界",
+      "district": "沙田區",
+      "address": "置富第一城G02號舖",
+      "fullAddress": "置富第一城G02號舖，沙田區，新界，香港",
+      "phones": [
+        "+852 29977232"
+      ],
+      "hours": "星期一至日 10:30-20:30",
+      "hoursGroups": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "10:30",
+          "close": "20:30"
+        }
+      ],
+      "geo": {
+        "lat": 22.386171,
+        "lng": 114.203662
+      },
+      "mapUrl": "https://www.google.com/maps?q=22.386171,114.203662",
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00047",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "signature": "872b00870fa79bcf"
+    }
+  }
+}

@@ -15,18 +15,27 @@
  *   5. 營業時間為「星期一 10:30-20:30、星期二 …」逐日字串 → 壓縮成「星期一至五」區間
  *   6. 分區（沙田區／觀塘區…）藏在地址倒數第三段 → 解析出來只當卡片標示與篩選選項，
  *      主頁版面**只分香港島／九龍／新界**，不按分區切子標題（16 個分區會碎成 1–2 間一組）
+ *
+ * 店鋪生命週期（store-page-lifecycle skill）:
+ *   active  = 官方 API 仍有回傳 → 正常卡片
+ *   removed = 從官方消失 ≤30 天 → 留在原區段，紅虛線框＋「原網頁已移除」＋移除日期，左側索引灰階
+ *   closed  = 消失 >30 天 → 移到頁底「已閉店」區塊（灰階），且**不列入左側索引**
+ *   30 天自「首次發現該店從官方 API 消失」當天起算；removedAt 只設定一次，之後沿用。
  */
 'use strict';
 
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { execSync } = require('child_process');
 
 const API_URL = 'https://go.buy.mi.com/hk/authorizedstore/getdata';
 const WWW = 'https://www.mi.com/hk';
 const OUT_DIR = process.argv[2] || __dirname;
 const OUT_HTML = path.join(OUT_DIR, 'index.html');
 const OUT_JSON = path.join(OUT_DIR, 'xiaomi-stores.json');
+const OUT_HISTORY = path.join(OUT_DIR, 'store-history.json');
+const CLOSED_DAYS = Number(process.env.STORE_CLOSED_DAYS || 30);
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
 const REQ_HEADERS = {
@@ -126,10 +135,17 @@ function compareStoreNo(a, b) {
 }
 
 async function fetchStores() {
-  console.log('抓取中:', API_URL);
-  const resp = await fetch(API_URL, { headers: REQ_HEADERS });
-  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-  const payload = await resp.json();
+  // STORE_FIXTURE：測試用，直接讀本機 JSON 取代抓 API（模擬「某店被官方下架」）
+  let payload;
+  if (process.env.STORE_FIXTURE) {
+    console.log('使用測試資料檔:', process.env.STORE_FIXTURE);
+    payload = JSON.parse(fs.readFileSync(process.env.STORE_FIXTURE, 'utf8'));
+  } else {
+    console.log('抓取中:', API_URL);
+    const resp = await fetch(API_URL, { headers: REQ_HEADERS });
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    payload = await resp.json();
+  }
   if (payload.errno !== 0) throw new Error(`API errno ${payload.errno}: ${payload.errmsg}`);
   const data = payload.data || {};
   const list = data.storeList || [];
@@ -177,6 +193,14 @@ function esc(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+/** ISO → DD/MM/YYYY（香港時區）；用於移除日期，前端不重新計算天數以免每日變動 */
+function fmtDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '';
+  return d.toLocaleDateString('zh-HK', { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'Asia/Hong_Kong' });
+}
+
 function readPreviousMeta() {
   try {
     const prev = JSON.parse(fs.readFileSync(OUT_JSON, 'utf8'));
@@ -184,15 +208,143 @@ function readPreviousMeta() {
   } catch { return { contentHash: '', updatedAt: '' }; }
 }
 
+/* ── 店鋪生命週期（store-page-lifecycle） ────────────────────────────── */
+
+/** 只把「會顯示在頁面上」的欄位納入簽章，避免每日時間戳造成無謂變更 */
+const CONTENT_KEYS = ['id', 'name', 'shortName', 'type', 'typeKey', 'region', 'district', 'address', 'fullAddress', 'phones', 'hours', 'hoursGroups', 'geo', 'mapUrl', 'detailUrl'];
+
+function storeSignature(r) {
+  const pick = {};
+  for (const k of CONTENT_KEYS) pick[k] = r[k];
+  return crypto.createHash('sha256').update(JSON.stringify(pick)).digest('hex').slice(0, 16);
+}
+
+function loadHistory() {
+  try {
+    const h = JSON.parse(fs.readFileSync(OUT_HISTORY, 'utf8'));
+    return { updatedAt: h.updatedAt || '', closedAfterDays: h.closedAfterDays || CLOSED_DAYS, stores: h.stores || {} };
+  } catch {
+    return { updatedAt: '', closedAfterDays: CLOSED_DAYS, stores: {} };
+  }
+}
+
+/**
+ * 初次建檔時回溯 git 全歷史，補齊「曾經出現但現在已消失」的店。
+ * 這是本流程最關鍵的陷阱：只補當下已知的已移除店，會漏掉更早消失的店，
+ * 它們會從頁面上無聲消失，直到有人問「為什麼官網以前有的店不見了」。
+ */
+function backfillFromGit(liveIds) {
+  const everSeen = new Map();
+  try {
+    // 注意：execSync 在 Windows 經 cmd.exe，--format 的值必須加引號，否則 `|` 會被當成管線
+    const log = execSync('git log --all --format="%H|%ad" --date="format:%Y-%m-%dT%H:%M:%S" -- xiaomi-stores.json', {
+      cwd: OUT_DIR, encoding: 'utf8', maxBuffer: 32 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    const commits = log.split('\n').filter(Boolean)
+      .map((l) => { const [sha, date] = l.split('|'); return { sha, date }; })
+      .sort((a, b) => a.date.localeCompare(b.date));
+    for (const c of commits) {
+      try {
+        const j = JSON.parse(execSync(`git show ${c.sha}:xiaomi-stores.json`, {
+          cwd: OUT_DIR, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'],
+        }));
+        for (const s of (j.stores || [])) {
+          if (!s || !s.id) continue;
+          everSeen.set(s.id, { record: s, lastSeen: s.lastSeen || c.date });
+        }
+      } catch { /* 略過讀不到的 commit */ }
+    }
+  } catch { /* 不是 git repo：維持「首次抓取即建檔」即可 */ }
+
+  const vanished = new Map();
+  for (const [id, e] of everSeen) if (!liveIds.has(id)) vanished.set(id, e);
+  return vanished;
+}
+
+/** 合併官方現況與歷史檔 → 每間店帶 state（active / removed / closed） */
+function mergeLifecycle(liveRecords, history, nowIso) {
+  const now = new Date(nowIso).getTime();
+  const liveIds = new Set(liveRecords.map((r) => r.id));
+  const prev = { ...(history.stores || {}) };
+  const out = new Map();
+
+  // 歷史檔是空的 → 首次建檔，先回溯補入曾存在、現已消失的店。
+  // 補進來後仍要落入下方「歷史有、官方無」的判定，才會取得正確的 removed / closed 狀態。
+  if (!Object.keys(prev).length) {
+    let backfilled = 0;
+    for (const [id, e] of backfillFromGit(liveIds)) {
+      const base = {};
+      for (const k of CONTENT_KEYS) base[k] = e.record[k];
+      base.id = id;
+      prev[id] = {
+        ...base,
+        firstSeen: e.record.firstSeen || e.lastSeen,
+        lastSeen: e.lastSeen,
+        removedAt: new Date(new Date(e.lastSeen).getTime() + 86400000).toISOString(), // 最後出現日的隔天
+        signature: storeSignature(base),
+      };
+      backfilled++;
+    }
+    if (backfilled) console.log(`回溯 git 歷史：補入 ${backfilled} 間曾存在、現已消失的店`);
+  }
+
+  for (const r of liveRecords) {
+    const p = prev[r.id] || null;
+    const sig = storeSignature(r);
+    out.set(r.id, {
+      ...r,
+      firstSeen: (p && p.firstSeen) || nowIso,
+      // 內容沒變就不動 lastSeen → 歷史檔在無變化時逐位元相同，不會每天產生 commit
+      lastSeen: (p && p.signature === sig && p.lastSeen) || nowIso,
+      removedAt: null,
+      signature: sig,
+      state: 'active',
+    });
+  }
+
+  for (const [id, h] of Object.entries(prev)) {
+    if (liveIds.has(id)) continue;
+    const removedAt = h.removedAt || nowIso;   // 只設定一次，之後沿用；每天重設會讓計時永遠到不了 30 天
+    const days = Math.floor((now - new Date(removedAt).getTime()) / 86400000);
+    out.set(id, { ...h, removedAt, state: days > CLOSED_DAYS ? 'closed' : 'removed' });
+  }
+
+  return [...out.values()];
+}
+
+function sortRecords(a, b) {
+  const ra = REGION_ORDER.indexOf(a.region), rb = REGION_ORDER.indexOf(b.region);
+  if (ra !== rb) return (ra < 0 ? 99 : ra) - (rb < 0 ? 99 : rb);
+  if (a.district !== b.district) return String(a.district).localeCompare(String(b.district), 'zh-HK');
+  return compareStoreNo(a.id, b.id);
+}
+
 async function main() {
-  const { records, storeTypeInfo } = await fetchStores();
-  console.log(`共 ${records.length} 間店舖`);
+  const { records: live, storeTypeInfo } = await fetchStores();
+  console.log(`官方回傳 ${live.length} 間店舖`);
+
+  // 生命週期合併：官方現況 × 歷史檔 → active / removed / closed
+  const history = loadHistory();
+  const nowIso = new Date().toISOString();
+  const all = mergeLifecycle(live, history, nowIso).sort(sortRecords);
+  const closedRecords = all.filter((r) => r.state === 'closed');
+  const records = all.filter((r) => r.state !== 'closed');   // 頁面主體：在架 + 已移除
+  const removedCount = records.filter((r) => r.state === 'removed').length;
+  const activeCount = records.length - removedCount;
+  console.log(`生命週期：在架 ${records.length - removedCount}｜已移除 ≤${CLOSED_DAYS} 天 ${removedCount}｜已閉店 ${closedRecords.length}`);
 
   // 資料本體沒變就不更新「資料更新日」，讓 HTML 逐位元一致 → 不會每天產生無意義 commit
-  const contentHash = crypto.createHash('sha256').update(JSON.stringify(records)).digest('hex').slice(0, 16);
+  const projection = all.map((r) => {
+    const o = {};
+    for (const k of CONTENT_KEYS) o[k] = r[k];
+    o.state = r.state;
+    o.removedAt = r.state === 'active' ? null : String(r.removedAt || '').slice(0, 10);
+    return o;
+  });
+  const contentHash = crypto.createHash('sha256').update(JSON.stringify(projection)).digest('hex').slice(0, 16);
   const prev = readPreviousMeta();
   const unchanged = prev.contentHash === contentHash && !!prev.updatedAt;
-  const updatedAt = unchanged ? prev.updatedAt : new Date().toISOString();
+  const updatedAt = unchanged ? prev.updatedAt : nowIso;
   const dateStr = new Date(updatedAt).toLocaleDateString('zh-HK', {
     year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Hong_Kong',
   });
@@ -225,11 +377,19 @@ async function main() {
       return `<a href="tel:${esc(tel)}" title="致電 ${esc(p)}">${esc(p)}</a>`;
     }).join('');
     const isDirect = r.typeKey === 'direct';
-    return `<article class="store-card${isDirect ? ' is-direct' : ''}" id="store-${esc(r.id)}" data-id="${esc(r.id)}" data-region="${esc(r.region)}" data-district="${esc(r.district)}" data-type="${esc(r.typeKey)}" data-search="${esc(searchBlob(r))}">
+    const isRemoved = r.state === 'removed';
+    const isClosed = r.state === 'closed';
+    const stateClass = isRemoved ? ' is-removed' : isClosed ? ' is-closed' : '';
+    const stateBadge = isRemoved ? '<span class="badge-removed">原網頁已移除</span>'
+      : isClosed ? '<span class="badge-closed">已閉店</span>' : '';
+    const stateNote = (isRemoved || isClosed) && r.removedAt
+      ? `<div class="removed-note">最後於官方出現：${esc(fmtDate(r.lastSeen))}・${esc(fmtDate(r.removedAt))} 起已移除</div>`
+      : '';
+    return `<article class="store-card${isDirect && !isClosed ? ' is-direct' : ''}${stateClass}" id="store-${esc(r.id)}" data-id="${esc(r.id)}" data-state="${esc(r.state)}" data-region="${esc(r.region)}" data-district="${esc(r.district)}" data-type="${esc(r.typeKey)}" data-search="${esc(searchBlob(r))}">
   <div class="card-top">
     <span class="store-no" title="店號 ${esc(r.id)}">${esc(r.id)}</span>
-    <span class="type-tag${isDirect ? ' direct' : ''}">${esc(r.type)}</span>
-    <span class="open-badge" data-hours="${esc(JSON.stringify(r.hoursGroups))}" aria-live="polite"></span>
+    <span class="type-tag${isDirect && !isClosed ? ' direct' : ''}">${esc(r.type)}</span>
+    ${stateBadge}${r.state === 'active' ? `<span class="open-badge" data-hours="${esc(JSON.stringify(r.hoursGroups))}" aria-live="polite"></span>` : ''}
   </div>
   <h4 class="store-name" title="${esc(r.name)}">${esc(short || r.shortName)}</h4>
   <div class="store-addr" title="${esc(r.fullAddress)}"><span class="district">${esc(r.district)}</span>${esc(r.address)}</div>
@@ -240,7 +400,14 @@ async function main() {
     ${r.detailUrl ? `<a class="mini" href="${esc(r.detailUrl)}" target="_blank" rel="noopener">官方頁</a>` : ''}
     <button type="button" class="mini copy" data-addr="${esc(r.fullAddress)}" title="複製完整地址">複製地址</button>
   </div>
+  ${stateNote}
 </article>`;
+  };
+
+  /** 區段標題計數：已移除另計，例「香港島 4（含 1 已移除）」 */
+  const countLabel = (list) => {
+    const rm = list.filter((r) => r.state === 'removed').length;
+    return rm ? `${list.length}（含 ${rm} 已移除）` : String(list.length);
   };
 
   const regionBlocks = regions.map((rg) => {
@@ -248,10 +415,19 @@ async function main() {
     // 分區資訊保留在卡片地址前的標籤與「分區」篩選選項，不作為版面的分組層級。
     const stores = rg.districts.flatMap((d) => d.stores);
     return `<section class="region" id="region-${esc(rg.region)}" data-region-section="${esc(rg.region)}">
-  <h2>${esc(rg.region)} <span class="count">${rg.total}</span></h2>
+  <h2>${esc(rg.region)} <span class="count">${esc(countLabel(stores))}</span></h2>
   <div class="stores">${stores.map(card).join('\n')}</div>
 </section>`;
   }).join('\n');
+
+  // 頁底「已閉店」區塊：永久保留，灰階，且不列入左側索引
+  const closedSection = closedRecords.length
+    ? `<section class="closed-zone" id="closed-zone" data-closed-section="1">
+  <h2>已閉店 <span class="count">${closedRecords.length}</span></h2>
+  <p class="closed-hint">以下門市已從官方店舖頁移除超過 ${CLOSED_DAYS} 天，僅作歷史記錄保留。</p>
+  <div class="stores">${closedRecords.map(card).join('\n')}</div>
+</section>`
+    : '';
 
   // ── 篩選列選項 ──────────────────────────────────────────────────────
   const ALL_TYPES = [{ key: 'direct', label: storeTypeInfo['2'] || '直營店' }, { key: 'authorized', label: storeTypeInfo['3'] || '授權店' }];
@@ -275,9 +451,9 @@ async function main() {
   ].map((t) => {
     const list = records.filter((r) => r.typeKey === t.key).sort((a, b) => compareStoreNo(a.id, b.id));
     if (!list.length) return '';
-    const items = list.map((r) => `        <a class="side-item" href="#store-${esc(r.id)}" data-id="${esc(r.id)}" title="${esc(r.id)}｜${esc(r.name)}｜${esc(r.region)} ${esc(r.district)}"><span class="side-no">${esc(r.id)}</span><span class="side-name">${esc(r.shortName)}</span><span class="side-d">${esc(r.district)}</span></a>`).join('\n');
+    const items = list.map((r) => `        <a class="side-item${r.state === 'removed' ? ' is-removed' : ''}" href="#store-${esc(r.id)}" data-id="${esc(r.id)}" title="${esc(r.id)}｜${esc(r.name)}｜${esc(r.region)} ${esc(r.district)}"><span class="side-no">${esc(r.id)}</span><span class="side-name">${esc(r.shortName)}</span><span class="side-d">${esc(r.district)}</span></a>`).join('\n');
     return `      <div class="side-group" data-side-type="${t.key}">
-        <div class="side-group-title">${esc(t.label)} <span class="count">${list.length}</span></div>
+        <div class="side-group-title">${esc(t.label)} <span class="count">${esc(countLabel(list))}</span></div>
 ${items}
       </div>`;
   }).filter(Boolean).join('\n');
@@ -287,8 +463,8 @@ ${items}
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>小米之家 香港門市一覽（${records.length} 間）| Xiaomi Store HK</title>
-<meta name="description" content="小米之家香港全部 ${records.length} 間門市（直營店及授權店）的店號、地址、營業時間、電話，按地區與分區整理，可直接篩選及搜尋。">
+<title>小米之家 香港門市一覽（在架 ${activeCount} 間）| Xiaomi Store HK</title>
+<meta name="description" content="小米之家香港 ${activeCount} 間在架門市（直營店及授權店）的店號、地址、營業時間、電話，按港島／九龍／新界整理，可直接篩選及搜尋；另附已移除及已閉店記錄。">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff6900'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='14' font-weight='bold' fill='%23fff' text-anchor='middle'%3Emi%3C/text%3E%3C/svg%3E">
 <style>
@@ -307,6 +483,8 @@ h1 { font-size:1.55rem; color:var(--primary); display:flex; align-items:center; 
 h1 .logo { display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:8px; background:var(--primary); color:#fff; font-size:1.05rem; font-weight:800; letter-spacing:-.5px; }
 .sub { color:var(--muted); font-size:.84rem; margin-top:.35rem; }
 .sub b { color:var(--fg); font-weight:600; }
+.sub .life-removed { color:#d9463f; font-weight:600; }
+.sub .life-closed { color:var(--muted); font-weight:600; }
 /* ── 篩選列 ── */
 .filters { position:sticky; top:0; z-index:30; background:var(--bg); border:1px solid var(--border); border-radius:.55rem; padding:.7rem .85rem; margin:0 auto 1rem; max-width:1440px; display:flex; flex-wrap:wrap; gap:.6rem .8rem; align-items:flex-end; box-shadow:0 2px 10px rgba(0,0,0,.06); }
 .filters label { display:flex; flex-direction:column; gap:.15rem; font-size:.74rem; color:var(--muted); }
@@ -358,6 +536,17 @@ main { flex:1 1 auto; min-width:0; }
 .mini { font-size:.75rem; border:1px solid var(--border); border-radius:.28rem; padding:.08rem .4rem; text-decoration:none; color:var(--muted); background:transparent; font-family:inherit; cursor:pointer; }
 .mini:hover { border-color:var(--primary); color:var(--primary); }
 .copy.copied { border-color:var(--ok); color:var(--ok); }
+/* ── 店鋪生命週期狀態 ── */
+.store-card.is-removed { border:1px dashed #d9463f; background:repeating-linear-gradient(135deg,transparent,transparent 10px,rgba(217,70,63,.035) 10px,rgba(217,70,63,.035) 20px); }
+.badge-removed { background:#d9463f; color:#fff; font-size:.66rem; font-weight:700; padding:.1rem .4rem; border-radius:.25rem; }
+.removed-note { font-size:.72rem; color:#d9463f; }
+.store-card.is-closed { opacity:.62; filter:grayscale(1); }
+.badge-closed { background:var(--muted); color:#fff; font-size:.66rem; font-weight:700; padding:.1rem .4rem; border-radius:.25rem; }
+.closed-zone { margin-top:2rem; border-top:2px dashed var(--border); padding-top:1.1rem; }
+.closed-zone > h2 { font-size:1.15rem; color:var(--muted); border-bottom:2px solid var(--muted); padding-bottom:.3rem; margin-bottom:.35rem; }
+.closed-hint { color:var(--muted); font-size:.78rem; margin-bottom:.3rem; }
+.side-item.is-removed { opacity:.55; }
+.side-item.is-removed .side-no { color:var(--muted); text-decoration:line-through; }
 .empty { border:1px dashed var(--border); border-radius:.55rem; padding:2rem 1rem; text-align:center; color:var(--muted); display:none; }
 footer { max-width:1440px; margin:2rem auto 0; color:var(--muted); font-size:.78rem; border-top:1px solid var(--border); padding-top:.7rem; }
 footer p + p { margin-top:.25rem; }
@@ -382,7 +571,7 @@ footer p + p { margin-top:.25rem; }
 <body>
 <header>
   <h1><span class="logo">mi</span>小米之家 香港門市一覽</h1>
-  <div class="sub">全港 <b>${records.length}</b> 間門市・<button type="button" class="mini" id="toggle-types" style="border:none;background:none;padding:0;color:var(--primary);cursor:pointer">${ALL_TYPES.map((t) => `${esc(t.label)} ${typeSummary[t.label] || 0}`).join(' ・ ')}</button>・資料來源：小米香港官網店舖頁</div>
+  <div class="sub">在架 <b>${activeCount}</b> 間門市${removedCount ? `・<span class="life-removed">${removedCount} 間已移除（仍保留 ${CLOSED_DAYS} 天）</span>` : ''}${closedRecords.length ? `・<span class="life-closed">${closedRecords.length} 間已閉店</span>` : ''}・<button type="button" class="mini" id="toggle-types" style="border:none;background:none;padding:0;color:var(--primary);cursor:pointer">${ALL_TYPES.map((t) => `${esc(t.label)} ${typeSummary[t.label] || 0}`).join(' ・ ')}</button>・資料來源：小米香港官網店舖頁</div>
 </header>
 
 <div class="filters">
@@ -419,20 +608,21 @@ ${storeNoOptions}
 
 <div class="layout">
   <aside class="sidebar" aria-label="店號索引">
-    <div class="sidebar-head"><span>店號索引</span><span class="count">${records.length}</span></div>
+    <div class="sidebar-head"><span>店號索引</span><span class="count">${esc(countLabel(records))}</span></div>
     <nav class="sidebar-nav">
 ${sidebarBlocks}
     </nav>
   </aside>
   <main>
 ${regionBlocks}
+${closedSection}
     <div class="empty" id="empty">沒有符合條件的門市，請調整篩選。</div>
   </main>
 </div>
 
 <footer>
-  <p>小米之家（香港）門市資料自動抓取自小米香港官網店舖位置頁（go.buy.mi.com／authorizedstore）。資料更新：${esc(dateStr)}・共 ${records.length} 間。</p>
-  <p>店號前綴：<b>MIHK</b> = 直營店、<b>SQHK</b> = 授權店。營業時間與電話以官方門市公告為準。本頁載入時間：<span id="load-time">—</span></p>
+  <p>小米之家（香港）門市資料自動抓取自小米香港官網店舖位置頁（go.buy.mi.com／authorizedstore）。資料更新：${esc(dateStr)}・在架 ${activeCount} 間${removedCount ? `・已移除 ${removedCount} 間` : ''}${closedRecords.length ? `・已閉店 ${closedRecords.length} 間` : ''}。</p>
+  <p>店號前綴：<b>MIHK</b> = 直營店、<b>SQHK</b> = 授權店。從官方店舖頁消失的門市會保留 ${CLOSED_DAYS} 天並標示「原網頁已移除」，之後移入頁底「已閉店」。營業時間與電話以官方公告為準。本頁載入時間：<span id="load-time">—</span></p>
 </footer>
 
 <script>
@@ -559,21 +749,72 @@ ${regionBlocks}
 </html>`;
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
+
+  // 產出資料檔：刻意不放 fetchedAt 等執行時間戳（否則每日重跑都會變髒，導致無意義 commit）
+  const jsonStores = all.map((r) => {
+    const o = {};
+    for (const k of CONTENT_KEYS) o[k] = r[k];
+    o.firstSeen = r.firstSeen || '';
+    o.lastSeen = r.lastSeen || '';
+    o.removedAt = r.removedAt || null;
+    o.state = r.state;
+    return o;
+  });
   fs.writeFileSync(OUT_JSON, JSON.stringify({
     source: API_URL,
     sourcePage: 'https://www.mi.com/hk/store/xiaomi-store',
-    fetchedAt: new Date().toISOString(),
     updatedAt,
     contentHash,
-    count: records.length,
+    closedAfterDays: CLOSED_DAYS,
+    count: activeCount,
+    activeCount,
+    removedCount,
+    closedCount: closedRecords.length,
     storeTypeInfo,
-    stores: records,
+    stores: jsonStores,
   }, null, 2), 'utf8');
+
+  // ── 歷史檔：必須 commit，否則每日重建會重置 30 天計時 ──
+  const historyStores = {};
+  for (const r of all.slice().sort((a, b) => a.id.localeCompare(b.id))) {
+    const entry = { storeNo: r.id };
+    for (const k of CONTENT_KEYS) entry[k] = r[k];
+    entry.firstSeen = r.firstSeen || '';
+    entry.lastSeen = r.lastSeen || '';
+    entry.removedAt = r.removedAt || null;
+    entry.signature = r.signature || storeSignature(r);
+    historyStores[r.id] = entry;
+  }
+  const historyChanged = canonical(historyStores) !== canonical(history.stores || {});
+  fs.writeFileSync(OUT_HISTORY, JSON.stringify({
+    updatedAt: (historyChanged || !history.updatedAt) ? nowIso : history.updatedAt,
+    closedAfterDays: CLOSED_DAYS,
+    stores: historyStores,
+  }, null, 2), 'utf8');
+
   fs.writeFileSync(OUT_HTML, html, 'utf8');
 
   console.log('已寫入:', OUT_JSON);
+  console.log('已寫入:', OUT_HISTORY, historyChanged ? '（歷史有新變化）' : '（歷史無變化）');
   console.log('已寫入:', OUT_HTML, `(${html.length} bytes)`);
   console.log(unchanged ? '資料未變 → 沿用既有更新日 ' + dateStr : '資料已更新 → ' + dateStr);
 }
 
-main().catch((e) => { console.error('失敗:', e.message); process.exit(1); });
+/** 鍵排序後的字串化：用來判斷歷史檔內容是否真的變了（不受 JSON 鍵序影響） */
+function canonical(v) {
+  if (Array.isArray(v)) return '[' + v.map(canonical).join(',') + ']';
+  if (v && typeof v === 'object') {
+    return '{' + Object.keys(v).sort().map((k) => JSON.stringify(k) + ':' + canonical(v[k])).join(',') + '}';
+  }
+  return JSON.stringify(v === undefined ? null : v);
+}
+
+module.exports = {
+  parseDailyHours, hoursText, splitAddress, shortName, typeInfo, compareStoreNo,
+  storeSignature, mergeLifecycle, loadHistory, sortRecords, fmtDate, canonical, esc,
+  CONTENT_KEYS, CLOSED_DAYS,
+};
+
+if (require.main === module) {
+  main().catch((e) => { console.error('失敗:', e.message); process.exit(1); });
+}

@@ -1,10 +1,13 @@
 {
   "source": "https://go.buy.mi.com/hk/authorizedstore/getdata",
   "sourcePage": "https://www.mi.com/hk/store/xiaomi-store",
-  "fetchedAt": "2026-10-29T09:42:38.605Z",
-  "updatedAt": "2026-10-29T09:20:21.935Z",
-  "contentHash": "9c4a3590caffb365",
+  "updatedAt": "2026-10-30T04:12:02.061Z",
+  "contentHash": "60c31b1b7ccda543",
+  "closedAfterDays": 30,
   "count": 41,
+  "activeCount": 41,
+  "removedCount": 0,
+  "closedCount": 0,
   "storeTypeInfo": {
     "2": "直營店",
     "3": "授權店"
@@ -39,13 +42,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.278809,
         "lng": 114.16482
       },
       "mapUrl": "https://www.google.com/maps?q=22.278809,114.16482",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00037"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00037",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00018",
@@ -76,13 +82,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.27763,
         "lng": 114.238939
       },
       "mapUrl": "https://www.google.com/maps?q=22.27763,114.238939",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00018"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00018",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00032",
@@ -113,13 +122,16 @@
           "close": "20:30"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.292899,
         "lng": 114.200611
       },
       "mapUrl": "https://www.google.com/maps?q=22.292899,114.200611",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00032"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00032",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "MIHK00002",
@@ -150,13 +162,16 @@
           "close": "22:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.279611,
         "lng": 114.185713
       },
       "mapUrl": "https://www.google.com/maps?q=22.279611,114.185713",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/MIHK00002"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/MIHK00002",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00031",
@@ -187,13 +202,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.331856,
         "lng": 114.201571
       },
       "mapUrl": "https://www.google.com/maps?q=22.331856,114.201571",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00031"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00031",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "MIHK00001",
@@ -224,13 +242,16 @@
           "close": "22:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.316197,
         "lng": 114.16977
       },
       "mapUrl": "https://www.google.com/maps?q=22.316197,114.16977",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/MIHK00001"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/MIHK00001",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00013",
@@ -261,13 +282,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.316735,
         "lng": 114.161592
       },
       "mapUrl": "https://www.google.com/maps?q=22.316735,114.161592",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00013"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00013",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00014",
@@ -298,13 +322,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.300713,
         "lng": 114.172755
       },
       "mapUrl": "https://www.google.com/maps?q=22.300713,114.172755",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00014"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00014",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00020",
@@ -335,13 +362,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.327084,
         "lng": 114.154394
       },
       "mapUrl": "https://www.google.com/maps?q=22.327084,114.154394",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00020"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00020",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00004",
@@ -370,13 +400,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.340507,
         "lng": 114.201998
       },
       "mapUrl": "https://www.google.com/maps?q=22.340507,114.201998",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00004"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00004",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00011",
@@ -405,13 +438,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.341908,
         "lng": 114.192864
       },
       "mapUrl": "https://www.google.com/maps?q=22.341908,114.192864",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00011"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00011",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00016",
@@ -442,13 +478,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.338324,
         "lng": 114.187232
       },
       "mapUrl": "https://www.google.com/maps?q=22.338324,114.187232",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00016"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00016",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00001",
@@ -477,13 +516,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.296194,
         "lng": 114.23839
       },
       "mapUrl": "https://www.google.com/maps?q=22.296194,114.23839",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00001"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00001",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00012",
@@ -514,13 +556,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.312401,
         "lng": 114.225222
       },
       "mapUrl": "https://www.google.com/maps?q=22.312401,114.225222",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00012"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00012",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00015",
@@ -551,13 +596,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.309093,
         "lng": 114.234359
       },
       "mapUrl": "https://www.google.com/maps?q=22.309093,114.234359",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00015"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00015",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00025",
@@ -588,13 +636,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.324548,
         "lng": 114.213324
       },
       "mapUrl": "https://www.google.com/maps?q=22.324548,114.213324",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00025"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00025",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00033",
@@ -625,13 +676,16 @@
           "close": "20:30"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.319842,
         "lng": 114.208528
       },
       "mapUrl": "https://www.google.com/maps?q=22.319842,114.208528",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00033"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00033",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00045",
@@ -662,13 +716,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.31284,
         "lng": 114.221403
       },
       "mapUrl": "https://www.google.com/maps?q=22.31284,114.221403",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00045"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00045",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00008",
@@ -697,13 +754,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.451673,
         "lng": 114.170131
       },
       "mapUrl": "https://www.google.com/maps?q=22.451673,114.170131",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00008"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00008",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "MIHK00003",
@@ -734,13 +794,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.44525,
         "lng": 114.03485
       },
       "mapUrl": "https://www.google.com/maps?q=22.44525,114.03485",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/MIHK00003"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/MIHK00003",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00005",
@@ -771,13 +834,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.46157,
         "lng": 113.997453
       },
       "mapUrl": "https://www.google.com/maps?q=22.46157,113.997453",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00005"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00005",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00021",
@@ -808,13 +874,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.443745,
         "lng": 114.027569
       },
       "mapUrl": "https://www.google.com/maps?q=22.443745,114.027569",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00021"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00021",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00003",
@@ -843,13 +912,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.392723,
         "lng": 113.977083
       },
       "mapUrl": "https://www.google.com/maps?q=22.392723,113.977083",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00003"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00003",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00034",
@@ -880,13 +952,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.395394,
         "lng": 113.973905
       },
       "mapUrl": "https://www.google.com/maps?q=22.395394,113.973905",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00034"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00034",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00023",
@@ -917,13 +992,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.492385,
         "lng": 114.138897
       },
       "mapUrl": "https://www.google.com/maps?q=22.492385,114.138897",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00023"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00023",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00024",
@@ -954,13 +1032,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.502066,
         "lng": 114.129279
       },
       "mapUrl": "https://www.google.com/maps?q=22.502066,114.129279",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00024"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00024",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00002",
@@ -989,13 +1070,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.296408,
         "lng": 114.270558
       },
       "mapUrl": "https://www.google.com/maps?q=22.296408,114.270558",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00002"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00002",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00007",
@@ -1026,13 +1110,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.324136,
         "lng": 114.257187
       },
       "mapUrl": "https://www.google.com/maps?q=22.324136,114.257187",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00007"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00007",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00009",
@@ -1061,13 +1148,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.316997,
         "lng": 114.265428
       },
       "mapUrl": "https://www.google.com/maps?q=22.316997,114.265428",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00009"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00009",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00019",
@@ -1098,13 +1188,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.307805,
         "lng": 114.259547
       },
       "mapUrl": "https://www.google.com/maps?q=22.307805,114.259547",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00019"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00019",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00017",
@@ -1135,13 +1228,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.381617,
         "lng": 114.188601
       },
       "mapUrl": "https://www.google.com/maps?q=22.381617,114.188601",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00017"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00017",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00022",
@@ -1172,13 +1268,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.424163,
         "lng": 114.231468
       },
       "mapUrl": "https://www.google.com/maps?q=22.424163,114.231468",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00022"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00022",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00046",
@@ -1209,13 +1308,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.372586,
         "lng": 114.179753
       },
       "mapUrl": "https://www.google.com/maps?q=22.372586,114.179753",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00046"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00046",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00047",
@@ -1246,13 +1348,16 @@
           "close": "20:30"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.386171,
         "lng": 114.203662
       },
       "mapUrl": "https://www.google.com/maps?q=22.386171,114.203662",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00047"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00047",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00010",
@@ -1281,13 +1386,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.370821,
         "lng": 114.111227
       },
       "mapUrl": "https://www.google.com/maps?q=22.370821,114.111227",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00010"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00010",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00026",
@@ -1318,13 +1426,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.36885,
         "lng": 114.120893
       },
       "mapUrl": "https://www.google.com/maps?q=22.36885,114.120893",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00026"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00026",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00035",
@@ -1355,13 +1466,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.368071,
         "lng": 114.110299
       },
       "mapUrl": "https://www.google.com/maps?q=22.368071,114.110299",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00035"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00035",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00044",
@@ -1392,13 +1506,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.374194,
         "lng": 114.114564
       },
       "mapUrl": "https://www.google.com/maps?q=22.374194,114.114564",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00044"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00044",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00006",
@@ -1429,13 +1546,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.357433,
         "lng": 114.12619
       },
       "mapUrl": "https://www.google.com/maps?q=22.357433,114.12619",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00006"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00006",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00027",
@@ -1466,13 +1586,16 @@
           "close": "21:00"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.358301,
         "lng": 114.107125
       },
       "mapUrl": "https://www.google.com/maps?q=22.358301,114.107125",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00027"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00027",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     },
     {
       "id": "SQHK00036",
@@ -1503,13 +1626,16 @@
           "close": "20:30"
         }
       ],
-      "hoursNote": "",
       "geo": {
         "lat": 22.365663,
         "lng": 114.139197
       },
       "mapUrl": "https://www.google.com/maps?q=22.365663,114.139197",
-      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00036"
+      "detailUrl": "https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00036",
+      "firstSeen": "2026-10-30T04:12:02.061Z",
+      "lastSeen": "2026-10-30T04:12:02.061Z",
+      "removedAt": null,
+      "state": "active"
     }
   ]
 }

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>小米之家 香港門市一覽（41 間）| Xiaomi Store HK</title>
-<meta name="description" content="小米之家香港全部 41 間門市（直營店及授權店）的店號、地址、營業時間、電話，按地區與分區整理，可直接篩選及搜尋。">
+<title>小米之家 香港門市一覽（在架 41 間）| Xiaomi Store HK</title>
+<meta name="description" content="小米之家香港 41 間在架門市（直營店及授權店）的店號、地址、營業時間、電話，按港島／九龍／新界整理，可直接篩選及搜尋；另附已移除及已閉店記錄。">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff6900'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='14' font-weight='bold' fill='%23fff' text-anchor='middle'%3Emi%3C/text%3E%3C/svg%3E">
 <style>
@@ -23,6 +23,8 @@ h1 { font-size:1.55rem; color:var(--primary); display:flex; align-items:center; 
 h1 .logo { display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:8px; background:var(--primary); color:#fff; font-size:1.05rem; font-weight:800; letter-spacing:-.5px; }
 .sub { color:var(--muted); font-size:.84rem; margin-top:.35rem; }
 .sub b { color:var(--fg); font-weight:600; }
+.sub .life-removed { color:#d9463f; font-weight:600; }
+.sub .life-closed { color:var(--muted); font-weight:600; }
 /* ── 篩選列 ── */
 .filters { position:sticky; top:0; z-index:30; background:var(--bg); border:1px solid var(--border); border-radius:.55rem; padding:.7rem .85rem; margin:0 auto 1rem; max-width:1440px; display:flex; flex-wrap:wrap; gap:.6rem .8rem; align-items:flex-end; box-shadow:0 2px 10px rgba(0,0,0,.06); }
 .filters label { display:flex; flex-direction:column; gap:.15rem; font-size:.74rem; color:var(--muted); }
@@ -74,6 +76,17 @@ main { flex:1 1 auto; min-width:0; }
 .mini { font-size:.75rem; border:1px solid var(--border); border-radius:.28rem; padding:.08rem .4rem; text-decoration:none; color:var(--muted); background:transparent; font-family:inherit; cursor:pointer; }
 .mini:hover { border-color:var(--primary); color:var(--primary); }
 .copy.copied { border-color:var(--ok); color:var(--ok); }
+/* ── 店鋪生命週期狀態 ── */
+.store-card.is-removed { border:1px dashed #d9463f; background:repeating-linear-gradient(135deg,transparent,transparent 10px,rgba(217,70,63,.035) 10px,rgba(217,70,63,.035) 20px); }
+.badge-removed { background:#d9463f; color:#fff; font-size:.66rem; font-weight:700; padding:.1rem .4rem; border-radius:.25rem; }
+.removed-note { font-size:.72rem; color:#d9463f; }
+.store-card.is-closed { opacity:.62; filter:grayscale(1); }
+.badge-closed { background:var(--muted); color:#fff; font-size:.66rem; font-weight:700; padding:.1rem .4rem; border-radius:.25rem; }
+.closed-zone { margin-top:2rem; border-top:2px dashed var(--border); padding-top:1.1rem; }
+.closed-zone > h2 { font-size:1.15rem; color:var(--muted); border-bottom:2px solid var(--muted); padding-bottom:.3rem; margin-bottom:.35rem; }
+.closed-hint { color:var(--muted); font-size:.78rem; margin-bottom:.3rem; }
+.side-item.is-removed { opacity:.55; }
+.side-item.is-removed .side-no { color:var(--muted); text-decoration:line-through; }
 .empty { border:1px dashed var(--border); border-radius:.55rem; padding:2rem 1rem; text-align:center; color:var(--muted); display:none; }
 footer { max-width:1440px; margin:2rem auto 0; color:var(--muted); font-size:.78rem; border-top:1px solid var(--border); padding-top:.7rem; }
 footer p + p { margin-top:.25rem; }
@@ -98,7 +111,7 @@ footer p + p { margin-top:.25rem; }
 <body>
 <header>
   <h1><span class="logo">mi</span>小米之家 香港門市一覽</h1>
-  <div class="sub">全港 <b>41</b> 間門市・<button type="button" class="mini" id="toggle-types" style="border:none;background:none;padding:0;color:var(--primary);cursor:pointer">直營店 3 ・ 授權店 38</button>・資料來源：小米香港官網店舖頁</div>
+  <div class="sub">在架 <b>41</b> 間門市・<button type="button" class="mini" id="toggle-types" style="border:none;background:none;padding:0;color:var(--primary);cursor:pointer">直營店 3 ・ 授權店 38</button>・資料來源：小米香港官網店舖頁</div>
 </header>
 
 <div class="filters">
@@ -251,7 +264,7 @@ footer p + p { margin-top:.25rem; }
   <main>
 <section class="region" id="region-香港島" data-region-section="香港島">
   <h2>香港島 <span class="count">4</span></h2>
-  <div class="stores"><article class="store-card" id="store-SQHK00037" data-id="SQHK00037" data-region="香港島" data-district="中西區" data-type="authorized" data-search="sqhk00037 小米之家中國（香港）港島金鐘廊授權店 港島金鐘廊授權店 授權店 香港島 中西區 金鐘金鐘道93號金鐘廊一樓d07-08號舖 金鐘金鐘道93號金鐘廊一樓d07-08號舖，中西區，香港島，香港 +852 35639176 星期一至日 11:00-21:00">
+  <div class="stores"><article class="store-card" id="store-SQHK00037" data-id="SQHK00037" data-state="active" data-region="香港島" data-district="中西區" data-type="authorized" data-search="sqhk00037 小米之家中國（香港）港島金鐘廊授權店 港島金鐘廊授權店 授權店 香港島 中西區 金鐘金鐘道93號金鐘廊一樓d07-08號舖 金鐘金鐘道93號金鐘廊一樓d07-08號舖，中西區，香港島，香港 +852 35639176 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00037">SQHK00037</span>
     <span class="type-tag">授權店</span>
@@ -266,8 +279,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00037" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="金鐘金鐘道93號金鐘廊一樓D07-08號舖，中西區，香港島，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00018" data-id="SQHK00018" data-region="香港島" data-district="東區" data-type="authorized" data-search="sqhk00018 小米之家中國（香港）杏花邨杏花新城授權店 杏花邨杏花新城授權店 授權店 香港島 東區 柴灣盛泰道100號杏花新城203d號舖 柴灣盛泰道100號杏花新城203d號舖，東區，香港島，香港 +852 28332901 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00018" data-id="SQHK00018" data-state="active" data-region="香港島" data-district="東區" data-type="authorized" data-search="sqhk00018 小米之家中國（香港）杏花邨杏花新城授權店 杏花邨杏花新城授權店 授權店 香港島 東區 柴灣盛泰道100號杏花新城203d號舖 柴灣盛泰道100號杏花新城203d號舖，東區，香港島，香港 +852 28332901 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00018">SQHK00018</span>
     <span class="type-tag">授權店</span>
@@ -282,8 +296,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00018" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="柴灣盛泰道100號杏花新城203D號舖，東區，香港島，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00032" data-id="SQHK00032" data-region="香港島" data-district="東區" data-type="authorized" data-search="sqhk00032 小米之家中國（香港）港島東北角匯授權店 港島東北角匯授權店 授權店 香港島 東區 北角渣華道123號北角匯2期地下g06號鋪 北角渣華道123號北角匯2期地下g06號鋪，東區，香港島，香港 +852 29881233 星期一至日 10:30-20:30">
+<article class="store-card" id="store-SQHK00032" data-id="SQHK00032" data-state="active" data-region="香港島" data-district="東區" data-type="authorized" data-search="sqhk00032 小米之家中國（香港）港島東北角匯授權店 港島東北角匯授權店 授權店 香港島 東區 北角渣華道123號北角匯2期地下g06號鋪 北角渣華道123號北角匯2期地下g06號鋪，東區，香港島，香港 +852 29881233 星期一至日 10:30-20:30">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00032">SQHK00032</span>
     <span class="type-tag">授權店</span>
@@ -298,8 +313,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00032" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="北角渣華道123號北角匯2期地下G06號鋪，東區，香港島，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card is-direct" id="store-MIHK00002" data-id="MIHK00002" data-region="香港島" data-district="灣仔區" data-type="direct" data-search="mihk00002 小米之家中國（香港）銅鑼灣怡和街店 銅鑼灣怡和街店 直營店 香港島 灣仔區 銅鑼灣怡和街42-44號華人銀行東區大廈地下 銅鑼灣怡和街42-44號華人銀行東區大廈地下，灣仔區，香港島，香港 +852 54963835 星期一至日 11:00-22:00">
+<article class="store-card is-direct" id="store-MIHK00002" data-id="MIHK00002" data-state="active" data-region="香港島" data-district="灣仔區" data-type="direct" data-search="mihk00002 小米之家中國（香港）銅鑼灣怡和街店 銅鑼灣怡和街店 直營店 香港島 灣仔區 銅鑼灣怡和街42-44號華人銀行東區大廈地下 銅鑼灣怡和街42-44號華人銀行東區大廈地下，灣仔區，香港島，香港 +852 54963835 星期一至日 11:00-22:00">
   <div class="card-top">
     <span class="store-no" title="店號 MIHK00002">MIHK00002</span>
     <span class="type-tag direct">直營店</span>
@@ -314,11 +330,12 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/MIHK00002" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="銅鑼灣怡和街42-44號華人銀行東區大廈地下，灣仔區，香港島，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article></div>
 </section>
 <section class="region" id="region-九龍" data-region-section="九龍">
   <h2>九龍 <span class="count">14</span></h2>
-  <div class="stores"><article class="store-card" id="store-SQHK00031" data-id="SQHK00031" data-region="九龍" data-district="九龍城區" data-type="authorized" data-search="sqhk00031 小米之家中國（香港）啟德雙子匯授權店 啟德雙子匯授權店 授權店 九龍 九龍城區 啟德沐翠街12號雙子匯2期地下g29舖 啟德沐翠街12號雙子匯2期地下g29舖，九龍城區，九龍，香港 +852 28668138 星期一至日 11:00-21:00">
+  <div class="stores"><article class="store-card" id="store-SQHK00031" data-id="SQHK00031" data-state="active" data-region="九龍" data-district="九龍城區" data-type="authorized" data-search="sqhk00031 小米之家中國（香港）啟德雙子匯授權店 啟德雙子匯授權店 授權店 九龍 九龍城區 啟德沐翠街12號雙子匯2期地下g29舖 啟德沐翠街12號雙子匯2期地下g29舖，九龍城區，九龍，香港 +852 28668138 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00031">SQHK00031</span>
     <span class="type-tag">授權店</span>
@@ -333,8 +350,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00031" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="啟德沐翠街12號雙子匯2期地下G29舖，九龍城區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card is-direct" id="store-MIHK00001" data-id="MIHK00001" data-region="九龍" data-district="油尖旺區" data-type="direct" data-search="mihk00001 小米之家中國（香港）旺角創興廣場店 旺角創興廣場店 直營店 九龍 油尖旺區 旺角彌敦道601號創興廣場地下d-f鋪 旺角彌敦道601號創興廣場地下d-f鋪，油尖旺區，九龍，香港 +852 2698 8871 星期一至日 11:00-22:00">
+<article class="store-card is-direct" id="store-MIHK00001" data-id="MIHK00001" data-state="active" data-region="九龍" data-district="油尖旺區" data-type="direct" data-search="mihk00001 小米之家中國（香港）旺角創興廣場店 旺角創興廣場店 直營店 九龍 油尖旺區 旺角彌敦道601號創興廣場地下d-f鋪 旺角彌敦道601號創興廣場地下d-f鋪，油尖旺區，九龍，香港 +852 2698 8871 星期一至日 11:00-22:00">
   <div class="card-top">
     <span class="store-no" title="店號 MIHK00001">MIHK00001</span>
     <span class="type-tag direct">直營店</span>
@@ -349,8 +367,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/MIHK00001" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="旺角彌敦道601號創興廣場地下D-F鋪，油尖旺區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00013" data-id="SQHK00013" data-region="九龍" data-district="油尖旺區" data-type="authorized" data-search="sqhk00013 小米之家中國（香港）奧運奧海城授權店 奧運奧海城授權店 授權店 九龍 油尖旺區 海庭道18號奧海城2期ug/f shop ug69a2 海庭道18號奧海城2期ug/f shop ug69a2，油尖旺區，九龍，香港 +852 28027233 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00013" data-id="SQHK00013" data-state="active" data-region="九龍" data-district="油尖旺區" data-type="authorized" data-search="sqhk00013 小米之家中國（香港）奧運奧海城授權店 奧運奧海城授權店 授權店 九龍 油尖旺區 海庭道18號奧海城2期ug/f shop ug69a2 海庭道18號奧海城2期ug/f shop ug69a2，油尖旺區，九龍，香港 +852 28027233 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00013">SQHK00013</span>
     <span class="type-tag">授權店</span>
@@ -365,8 +384,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00013" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="海庭道18號奧海城2期UG/F SHOP UG69A2，油尖旺區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00014" data-id="SQHK00014" data-region="九龍" data-district="油尖旺區" data-type="authorized" data-search="sqhk00014 小米之家中國（香港）尖沙咀美麗華廣場授權店 尖沙咀美麗華廣場授權店 授權店 九龍 油尖旺區 尖沙咀金巴利道9號美麗華廣場一期1樓shop112號舖 尖沙咀金巴利道9號美麗華廣場一期1樓shop112號舖，油尖旺區，九龍，香港 +852 28331089 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00014" data-id="SQHK00014" data-state="active" data-region="九龍" data-district="油尖旺區" data-type="authorized" data-search="sqhk00014 小米之家中國（香港）尖沙咀美麗華廣場授權店 尖沙咀美麗華廣場授權店 授權店 九龍 油尖旺區 尖沙咀金巴利道9號美麗華廣場一期1樓shop112號舖 尖沙咀金巴利道9號美麗華廣場一期1樓shop112號舖，油尖旺區，九龍，香港 +852 28331089 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00014">SQHK00014</span>
     <span class="type-tag">授權店</span>
@@ -381,8 +401,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00014" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="尖沙咀金巴利道9號美麗華廣場一期1樓Shop112號舖，油尖旺區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00020" data-id="SQHK00020" data-region="九龍" data-district="深水埗區" data-type="authorized" data-search="sqhk00020 小米之家中國（香港）南昌v walk授權店 南昌v walk授權店 授權店 九龍 深水埗區 深旺道28號v walk 2樓l2-27&amp;28號舖 深旺道28號v walk 2樓l2-27&amp;28號舖，深水埗區，九龍，香港 +852 35638429 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00020" data-id="SQHK00020" data-state="active" data-region="九龍" data-district="深水埗區" data-type="authorized" data-search="sqhk00020 小米之家中國（香港）南昌v walk授權店 南昌v walk授權店 授權店 九龍 深水埗區 深旺道28號v walk 2樓l2-27&amp;28號舖 深旺道28號v walk 2樓l2-27&amp;28號舖，深水埗區，九龍，香港 +852 35638429 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00020">SQHK00020</span>
     <span class="type-tag">授權店</span>
@@ -397,8 +418,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00020" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="深旺道28號V WALK 2樓L2-27&amp;28號舖，深水埗區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00004" data-id="SQHK00004" data-region="九龍" data-district="黃大仙區" data-type="authorized" data-search="sqhk00004 小米之家中國（香港）鑽石山荷里活廣場授權店 鑽石山荷里活廣場授權店 授權店 九龍 黃大仙區 鑽石山龍蟠街3號荷里活廣場2樓256b-257號鋪 鑽石山龍蟠街3號荷里活廣場2樓256b-257號鋪，黃大仙區，九龍，香港 +852 3188 1593 星期一至五 11:00-21:00（星期六至日未提供）">
+<article class="store-card" id="store-SQHK00004" data-id="SQHK00004" data-state="active" data-region="九龍" data-district="黃大仙區" data-type="authorized" data-search="sqhk00004 小米之家中國（香港）鑽石山荷里活廣場授權店 鑽石山荷里活廣場授權店 授權店 九龍 黃大仙區 鑽石山龍蟠街3號荷里活廣場2樓256b-257號鋪 鑽石山龍蟠街3號荷里活廣場2樓256b-257號鋪，黃大仙區，九龍，香港 +852 3188 1593 星期一至五 11:00-21:00（星期六至日未提供）">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00004">SQHK00004</span>
     <span class="type-tag">授權店</span>
@@ -413,8 +435,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00004" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="鑽石山龍蟠街3號荷里活廣場2樓256B-257號鋪，黃大仙區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00011" data-id="SQHK00011" data-region="九龍" data-district="黃大仙區" data-type="authorized" data-search="sqhk00011 小米之家中國（香港）黃大仙區黃大仙中心授權店 黃大仙區黃大仙中心授權店 授權店 九龍 黃大仙區 黃大仙龍翔道136號黃大仙中心北館地下g02b及g03a號鋪 黃大仙龍翔道136號黃大仙中心北館地下g02b及g03a號鋪，黃大仙區，九龍，香港 +852 2346 8788 星期一至五 11:00-21:00（星期六至日未提供）">
+<article class="store-card" id="store-SQHK00011" data-id="SQHK00011" data-state="active" data-region="九龍" data-district="黃大仙區" data-type="authorized" data-search="sqhk00011 小米之家中國（香港）黃大仙區黃大仙中心授權店 黃大仙區黃大仙中心授權店 授權店 九龍 黃大仙區 黃大仙龍翔道136號黃大仙中心北館地下g02b及g03a號鋪 黃大仙龍翔道136號黃大仙中心北館地下g02b及g03a號鋪，黃大仙區，九龍，香港 +852 2346 8788 星期一至五 11:00-21:00（星期六至日未提供）">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00011">SQHK00011</span>
     <span class="type-tag">授權店</span>
@@ -429,8 +452,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00011" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="黃大仙龍翔道136號黃大仙中心北館地下G02B及G03A號鋪，黃大仙區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00016" data-id="SQHK00016" data-region="九龍" data-district="黃大仙區" data-type="authorized" data-search="sqhk00016 小米之家中國（香港）黃大仙區樂富廣場授權店 黃大仙區樂富廣場授權店 授權店 九龍 黃大仙區 黄大仙樂富聯合道198號樂富廣場2期ug層u103號舖 黄大仙樂富聯合道198號樂富廣場2期ug層u103號舖，黃大仙區，九龍，香港 +852 34602002 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00016" data-id="SQHK00016" data-state="active" data-region="九龍" data-district="黃大仙區" data-type="authorized" data-search="sqhk00016 小米之家中國（香港）黃大仙區樂富廣場授權店 黃大仙區樂富廣場授權店 授權店 九龍 黃大仙區 黄大仙樂富聯合道198號樂富廣場2期ug層u103號舖 黄大仙樂富聯合道198號樂富廣場2期ug層u103號舖，黃大仙區，九龍，香港 +852 34602002 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00016">SQHK00016</span>
     <span class="type-tag">授權店</span>
@@ -445,8 +469,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00016" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="黄大仙樂富聯合道198號樂富廣場2期UG層U103號舖，黃大仙區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00001" data-id="SQHK00001" data-region="九龍" data-district="觀塘區" data-type="authorized" data-search="sqhk00001 小米之家中國（香港）油塘大本型授權店 油塘大本型授權店 授權店 九龍 觀塘區 油塘高超道38號大本型商場l1層104-105鋪位 油塘高超道38號大本型商場l1層104-105鋪位，觀塘區，九龍，香港 +852 3612 2653 星期一至五 11:00-21:00（星期六至日未提供）">
+<article class="store-card" id="store-SQHK00001" data-id="SQHK00001" data-state="active" data-region="九龍" data-district="觀塘區" data-type="authorized" data-search="sqhk00001 小米之家中國（香港）油塘大本型授權店 油塘大本型授權店 授權店 九龍 觀塘區 油塘高超道38號大本型商場l1層104-105鋪位 油塘高超道38號大本型商場l1層104-105鋪位，觀塘區，九龍，香港 +852 3612 2653 星期一至五 11:00-21:00（星期六至日未提供）">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00001">SQHK00001</span>
     <span class="type-tag">授權店</span>
@@ -461,8 +486,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00001" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="油塘高超道38號大本型商場L1層104-105鋪位，觀塘區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00012" data-id="SQHK00012" data-region="九龍" data-district="觀塘區" data-type="authorized" data-search="sqhk00012 小米之家中國（香港）觀塘apm授權店 觀塘apm授權店 授權店 九龍 觀塘區 觀塘道418號創紀之城五期apm商場3樓l3-7號鋪 觀塘道418號創紀之城五期apm商場3樓l3-7號鋪，觀塘區，九龍，香港 +852 36196487 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00012" data-id="SQHK00012" data-state="active" data-region="九龍" data-district="觀塘區" data-type="authorized" data-search="sqhk00012 小米之家中國（香港）觀塘apm授權店 觀塘apm授權店 授權店 九龍 觀塘區 觀塘道418號創紀之城五期apm商場3樓l3-7號鋪 觀塘道418號創紀之城五期apm商場3樓l3-7號鋪，觀塘區，九龍，香港 +852 36196487 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00012">SQHK00012</span>
     <span class="type-tag">授權店</span>
@@ -477,8 +503,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00012" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="觀塘道418號創紀之城五期APM商場3樓L3-7號鋪，觀塘區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00015" data-id="SQHK00015" data-region="九龍" data-district="觀塘區" data-type="authorized" data-search="sqhk00015 小米之家中國（香港）藍田啟田商場授權店 藍田啟田商場授權店 授權店 九龍 觀塘區 藍田啟田商場2樓204號舖 藍田啟田商場2樓204號舖，觀塘區，九龍，香港 +852 61927495 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00015" data-id="SQHK00015" data-state="active" data-region="九龍" data-district="觀塘區" data-type="authorized" data-search="sqhk00015 小米之家中國（香港）藍田啟田商場授權店 藍田啟田商場授權店 授權店 九龍 觀塘區 藍田啟田商場2樓204號舖 藍田啟田商場2樓204號舖，觀塘區，九龍，香港 +852 61927495 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00015">SQHK00015</span>
     <span class="type-tag">授權店</span>
@@ -493,8 +520,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00015" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="藍田啟田商場2樓204號舖，觀塘區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00025" data-id="SQHK00025" data-region="九龍" data-district="觀塘區" data-type="authorized" data-search="sqhk00025 小米之家中國（香港）九龍灣德福廣場授權店 九龍灣德福廣場授權店 授權店 九龍 觀塘區 九龍灣德福廣場1期地下g91號舖 九龍灣德福廣場1期地下g91號舖，觀塘區，九龍，香港 +852 26213200 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00025" data-id="SQHK00025" data-state="active" data-region="九龍" data-district="觀塘區" data-type="authorized" data-search="sqhk00025 小米之家中國（香港）九龍灣德福廣場授權店 九龍灣德福廣場授權店 授權店 九龍 觀塘區 九龍灣德福廣場1期地下g91號舖 九龍灣德福廣場1期地下g91號舖，觀塘區，九龍，香港 +852 26213200 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00025">SQHK00025</span>
     <span class="type-tag">授權店</span>
@@ -509,8 +537,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00025" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="九龍灣德福廣場1期地下G91號舖，觀塘區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00033" data-id="SQHK00033" data-region="九龍" data-district="觀塘區" data-type="authorized" data-search="sqhk00033 小米之家中國（香港）九龍灣megabox授權店 九龍灣megabox授權店 授權店 九龍 觀塘區 九龍九龍灣宏照道38號企業廣場5期地下g03號鋪 九龍九龍灣宏照道38號企業廣場5期地下g03號鋪，觀塘區，九龍，香港 +852 29812999 星期一至日 10:30-20:30">
+<article class="store-card" id="store-SQHK00033" data-id="SQHK00033" data-state="active" data-region="九龍" data-district="觀塘區" data-type="authorized" data-search="sqhk00033 小米之家中國（香港）九龍灣megabox授權店 九龍灣megabox授權店 授權店 九龍 觀塘區 九龍九龍灣宏照道38號企業廣場5期地下g03號鋪 九龍九龍灣宏照道38號企業廣場5期地下g03號鋪，觀塘區，九龍，香港 +852 29812999 星期一至日 10:30-20:30">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00033">SQHK00033</span>
     <span class="type-tag">授權店</span>
@@ -525,8 +554,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00033" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="九龍九龍灣宏照道38號企業廣場5期地下G03號鋪，觀塘區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00045" data-id="SQHK00045" data-region="九龍" data-district="觀塘區" data-type="authorized" data-search="sqhk00045 小米之家中國（香港）牛頭角the angle授權店 牛頭角the angle授權店 授權店 九龍 觀塘區 觀塘巧明街98號the angle1樓 105&amp;107號舖 觀塘巧明街98號the angle1樓 105&amp;107號舖，觀塘區，九龍，香港 +852 35909255 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00045" data-id="SQHK00045" data-state="active" data-region="九龍" data-district="觀塘區" data-type="authorized" data-search="sqhk00045 小米之家中國（香港）牛頭角the angle授權店 牛頭角the angle授權店 授權店 九龍 觀塘區 觀塘巧明街98號the angle1樓 105&amp;107號舖 觀塘巧明街98號the angle1樓 105&amp;107號舖，觀塘區，九龍，香港 +852 35909255 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00045">SQHK00045</span>
     <span class="type-tag">授權店</span>
@@ -541,11 +571,12 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00045" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="觀塘巧明街98號The ANGLE1樓 105&amp;107號舖，觀塘區，九龍，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article></div>
 </section>
 <section class="region" id="region-新界" data-region-section="新界">
   <h2>新界 <span class="count">23</span></h2>
-  <div class="stores"><article class="store-card" id="store-SQHK00008" data-id="SQHK00008" data-region="新界" data-district="大埔區" data-type="authorized" data-search="sqhk00008 小米之家中國（香港）大埔區大埔超級城授權店 大埔區大埔超級城授權店 授權店 新界 大埔區 大埔安邦路8-10號大埔超級城b區2樓238b 大埔安邦路8-10號大埔超級城b區2樓238b，大埔區，新界，香港 +852 2346 8328 星期一至五 11:00-21:00（星期六至日未提供）">
+  <div class="stores"><article class="store-card" id="store-SQHK00008" data-id="SQHK00008" data-state="active" data-region="新界" data-district="大埔區" data-type="authorized" data-search="sqhk00008 小米之家中國（香港）大埔區大埔超級城授權店 大埔區大埔超級城授權店 授權店 新界 大埔區 大埔安邦路8-10號大埔超級城b區2樓238b 大埔安邦路8-10號大埔超級城b區2樓238b，大埔區，新界，香港 +852 2346 8328 星期一至五 11:00-21:00（星期六至日未提供）">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00008">SQHK00008</span>
     <span class="type-tag">授權店</span>
@@ -560,8 +591,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00008" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="大埔安邦路8-10號大埔超級城B區2樓238B，大埔區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card is-direct" id="store-MIHK00003" data-id="MIHK00003" data-region="新界" data-district="元朗區" data-type="direct" data-search="mihk00003 小米之家中國（香港）元朗yoho mall店 元朗yoho mall店 直營店 新界 元朗區 元朗朗日路8-9號及元龍街9號yoho mall ii (形點ii) 一樓a102號舖 元朗朗日路8-9號及元龍街9號yoho mall ii (形點ii) 一樓a102號舖，元朗區，新界，香港 +852 2333 3310 星期一至日 11:00-21:00">
+<article class="store-card is-direct" id="store-MIHK00003" data-id="MIHK00003" data-state="active" data-region="新界" data-district="元朗區" data-type="direct" data-search="mihk00003 小米之家中國（香港）元朗yoho mall店 元朗yoho mall店 直營店 新界 元朗區 元朗朗日路8-9號及元龍街9號yoho mall ii (形點ii) 一樓a102號舖 元朗朗日路8-9號及元龍街9號yoho mall ii (形點ii) 一樓a102號舖，元朗區，新界，香港 +852 2333 3310 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 MIHK00003">MIHK00003</span>
     <span class="type-tag direct">直營店</span>
@@ -576,8 +608,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/MIHK00003" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="元朗朗日路8-9號及元龍街9號YOHO MALL II (形點II) 一樓A102號舖，元朗區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00005" data-id="SQHK00005" data-region="新界" data-district="元朗區" data-type="authorized" data-search="sqhk00005 小米之家中國（香港）天水圍t town授權店 天水圍t town授權店 授權店 新界 元朗區 天水圍天華路30號天頌苑t town南館2樓s219號舖 天水圍天華路30號天頌苑t town南館2樓s219號舖，元朗區，新界，香港 +852 3188 9550 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00005" data-id="SQHK00005" data-state="active" data-region="新界" data-district="元朗區" data-type="authorized" data-search="sqhk00005 小米之家中國（香港）天水圍t town授權店 天水圍t town授權店 授權店 新界 元朗區 天水圍天華路30號天頌苑t town南館2樓s219號舖 天水圍天華路30號天頌苑t town南館2樓s219號舖，元朗區，新界，香港 +852 3188 9550 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00005">SQHK00005</span>
     <span class="type-tag">授權店</span>
@@ -592,8 +625,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00005" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="天水圍天華路30號天頌苑T Town南館2樓S219號舖，元朗區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00021" data-id="SQHK00021" data-region="新界" data-district="元朗區" data-type="authorized" data-search="sqhk00021 小米之家中國（香港）元朗鈞德樓授權店 元朗鈞德樓授權店 授權店 新界 元朗區 康景街2-20號鈞德樓地下13號舖 康景街2-20號鈞德樓地下13號舖，元朗區，新界，香港 +852 24780233 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00021" data-id="SQHK00021" data-state="active" data-region="新界" data-district="元朗區" data-type="authorized" data-search="sqhk00021 小米之家中國（香港）元朗鈞德樓授權店 元朗鈞德樓授權店 授權店 新界 元朗區 康景街2-20號鈞德樓地下13號舖 康景街2-20號鈞德樓地下13號舖，元朗區，新界，香港 +852 24780233 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00021">SQHK00021</span>
     <span class="type-tag">授權店</span>
@@ -608,8 +642,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00021" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="康景街2-20號鈞德樓地下13號舖，元朗區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00003" data-id="SQHK00003" data-region="新界" data-district="屯門區" data-type="authorized" data-search="sqhk00003 小米之家中國（香港）屯門區屯門市廣場授權店 屯門區屯門市廣場授權店 授權店 新界 屯門區 屯門屯盛街1號屯門市廣場1期2樓2065-2066號舖 屯門屯盛街1號屯門市廣場1期2樓2065-2066號舖，屯門區，新界，香港 +852 3996 9156 星期一至五 11:00-21:00（星期六至日未提供）">
+<article class="store-card" id="store-SQHK00003" data-id="SQHK00003" data-state="active" data-region="新界" data-district="屯門區" data-type="authorized" data-search="sqhk00003 小米之家中國（香港）屯門區屯門市廣場授權店 屯門區屯門市廣場授權店 授權店 新界 屯門區 屯門屯盛街1號屯門市廣場1期2樓2065-2066號舖 屯門屯盛街1號屯門市廣場1期2樓2065-2066號舖，屯門區，新界，香港 +852 3996 9156 星期一至五 11:00-21:00（星期六至日未提供）">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00003">SQHK00003</span>
     <span class="type-tag">授權店</span>
@@ -624,8 +659,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00003" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="屯門屯盛街1號屯門市廣場1期2樓2065-2066號舖，屯門區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00034" data-id="SQHK00034" data-region="新界" data-district="屯門區" data-type="authorized" data-search="sqhk00034 小米之家中國（香港）屯門v city授權店 屯門v city授權店 授權店 新界 屯門區 屯門屯門鄉事會路83號v city地鐵樓層l2，m-52號鋪 屯門屯門鄉事會路83號v city地鐵樓層l2, m-52號鋪，屯門區，新界，香港 +852 36197529 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00034" data-id="SQHK00034" data-state="active" data-region="新界" data-district="屯門區" data-type="authorized" data-search="sqhk00034 小米之家中國（香港）屯門v city授權店 屯門v city授權店 授權店 新界 屯門區 屯門屯門鄉事會路83號v city地鐵樓層l2，m-52號鋪 屯門屯門鄉事會路83號v city地鐵樓層l2, m-52號鋪，屯門區，新界，香港 +852 36197529 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00034">SQHK00034</span>
     <span class="type-tag">授權店</span>
@@ -640,8 +676,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00034" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="屯門屯門鄉事會路83號V City地鐵樓層L2, M-52號鋪，屯門區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00023" data-id="SQHK00023" data-region="新界" data-district="北區" data-type="authorized" data-search="sqhk00023 小米之家中國（香港）粉嶺名都商場授權店 粉嶺名都商場授權店 授權店 新界 北區 粉嶺車站路18號名都商場 2/f shop7&amp;8號舖 粉嶺車站路18號名都商場 2/f shop7&amp;8號舖，北區，新界，香港 +852 23312269 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00023" data-id="SQHK00023" data-state="active" data-region="新界" data-district="北區" data-type="authorized" data-search="sqhk00023 小米之家中國（香港）粉嶺名都商場授權店 粉嶺名都商場授權店 授權店 新界 北區 粉嶺車站路18號名都商場 2/f shop7&amp;8號舖 粉嶺車站路18號名都商場 2/f shop7&amp;8號舖，北區，新界，香港 +852 23312269 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00023">SQHK00023</span>
     <span class="type-tag">授權店</span>
@@ -656,8 +693,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00023" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="粉嶺車站路18號名都商場 2/F SHOP7&amp;8號舖，北區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00024" data-id="SQHK00024" data-region="新界" data-district="北區" data-type="authorized" data-search="sqhk00024 小米之家中國（香港）上水新都廣場授權店 上水新都廣場授權店 授權店 新界 北區 上水龍運街8號新都廣場2樓shop 202-207a號舖 上水龍運街8號新都廣場2樓shop 202-207a號舖，北區，新界，香港 +852 22612188 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00024" data-id="SQHK00024" data-state="active" data-region="新界" data-district="北區" data-type="authorized" data-search="sqhk00024 小米之家中國（香港）上水新都廣場授權店 上水新都廣場授權店 授權店 新界 北區 上水龍運街8號新都廣場2樓shop 202-207a號舖 上水龍運街8號新都廣場2樓shop 202-207a號舖，北區，新界，香港 +852 22612188 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00024">SQHK00024</span>
     <span class="type-tag">授權店</span>
@@ -672,8 +710,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00024" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="上水龍運街8號新都廣場2樓Shop 202-207A號舖，北區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00002" data-id="SQHK00002" data-region="新界" data-district="西貢區" data-type="authorized" data-search="sqhk00002 小米之家中國（香港）the lohas康城授權店 the lohas康城授權店 授權店 新界 西貢區 將軍澳康城路1號the lohas康城 3/f shop 351 將軍澳康城路1號the lohas康城 3/f shop 351，西貢區，新界，香港 +852 23180836 星期一至五 11:00-21:00（星期六至日未提供）">
+<article class="store-card" id="store-SQHK00002" data-id="SQHK00002" data-state="active" data-region="新界" data-district="西貢區" data-type="authorized" data-search="sqhk00002 小米之家中國（香港）the lohas康城授權店 the lohas康城授權店 授權店 新界 西貢區 將軍澳康城路1號the lohas康城 3/f shop 351 將軍澳康城路1號the lohas康城 3/f shop 351，西貢區，新界，香港 +852 23180836 星期一至五 11:00-21:00（星期六至日未提供）">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00002">SQHK00002</span>
     <span class="type-tag">授權店</span>
@@ -688,8 +727,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00002" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="將軍澳康城路1號THE LOHAS康城 3/F SHOP 351，西貢區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00007" data-id="SQHK00007" data-region="新界" data-district="西貢區" data-type="authorized" data-search="sqhk00007 小米之家中國（香港）寶琳新都城中心授權店 寶琳新都城中心授權店 授權店 新界 西貢區 將軍澳欣景路8號新都城中心二期 1103-04號鋪 將軍澳欣景路8號新都城中心二期 1103-04號鋪，西貢區，新界，香港 +852 35203082 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00007" data-id="SQHK00007" data-state="active" data-region="新界" data-district="西貢區" data-type="authorized" data-search="sqhk00007 小米之家中國（香港）寶琳新都城中心授權店 寶琳新都城中心授權店 授權店 新界 西貢區 將軍澳欣景路8號新都城中心二期 1103-04號鋪 將軍澳欣景路8號新都城中心二期 1103-04號鋪，西貢區，新界，香港 +852 35203082 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00007">SQHK00007</span>
     <span class="type-tag">授權店</span>
@@ -704,8 +744,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00007" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="將軍澳欣景路8號新都城中心二期 1103-04號鋪，西貢區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00009" data-id="SQHK00009" data-region="新界" data-district="西貢區" data-type="authorized" data-search="sqhk00009 小米之家中國（香港）坑口東港城授權店 坑口東港城授權店 授權店 新界 西貢區 將軍澳坑口東港城1樓129a至129b號鋪 將軍澳坑口東港城1樓129a至129b號鋪，西貢區，新界，香港 +852 2349 8288 星期一至五 11:00-21:00（星期六至日未提供）">
+<article class="store-card" id="store-SQHK00009" data-id="SQHK00009" data-state="active" data-region="新界" data-district="西貢區" data-type="authorized" data-search="sqhk00009 小米之家中國（香港）坑口東港城授權店 坑口東港城授權店 授權店 新界 西貢區 將軍澳坑口東港城1樓129a至129b號鋪 將軍澳坑口東港城1樓129a至129b號鋪，西貢區，新界，香港 +852 2349 8288 星期一至五 11:00-21:00（星期六至日未提供）">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00009">SQHK00009</span>
     <span class="type-tag">授權店</span>
@@ -720,8 +761,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00009" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="將軍澳坑口東港城1樓129A至129B號鋪，西貢區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00019" data-id="SQHK00019" data-region="新界" data-district="西貢區" data-type="authorized" data-search="sqhk00019 小米之家中國（香港）將軍澳popcorn授權店 將軍澳popcorn授權店 授權店 新界 西貢區 將軍澳唐賢街9號popcorn1樓f59號舖 將軍澳唐賢街9號popcorn1樓f59號舖，西貢區，新界，香港 +852 34602027 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00019" data-id="SQHK00019" data-state="active" data-region="新界" data-district="西貢區" data-type="authorized" data-search="sqhk00019 小米之家中國（香港）將軍澳popcorn授權店 將軍澳popcorn授權店 授權店 新界 西貢區 將軍澳唐賢街9號popcorn1樓f59號舖 將軍澳唐賢街9號popcorn1樓f59號舖，西貢區，新界，香港 +852 34602027 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00019">SQHK00019</span>
     <span class="type-tag">授權店</span>
@@ -736,8 +778,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00019" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="將軍澳唐賢街9號POPCORN1樓F59號舖，西貢區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00017" data-id="SQHK00017" data-region="新界" data-district="沙田區" data-type="authorized" data-search="sqhk00017 小米之家中國（香港）沙田新城市廣場授權店 沙田新城市廣場授權店 授權店 新界 沙田區 新城市廣場1期6樓shop 614號舖 新城市廣場1期6樓shop 614號舖，沙田區，新界，香港 +852 53376160 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00017" data-id="SQHK00017" data-state="active" data-region="新界" data-district="沙田區" data-type="authorized" data-search="sqhk00017 小米之家中國（香港）沙田新城市廣場授權店 沙田新城市廣場授權店 授權店 新界 沙田區 新城市廣場1期6樓shop 614號舖 新城市廣場1期6樓shop 614號舖，沙田區，新界，香港 +852 53376160 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00017">SQHK00017</span>
     <span class="type-tag">授權店</span>
@@ -752,8 +795,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00017" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="新城市廣場1期6樓Shop 614號舖，沙田區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00022" data-id="SQHK00022" data-region="新界" data-district="沙田區" data-type="authorized" data-search="sqhk00022 小米之家中國（香港）馬鞍山新港城中心授權店 馬鞍山新港城中心授權店 授權店 新界 沙田區 馬鞍山鞍祿街18號新港城中心2樓2216號舖 馬鞍山鞍祿街18號新港城中心2樓2216號舖，沙田區，新界，香港 +852 24780088 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00022" data-id="SQHK00022" data-state="active" data-region="新界" data-district="沙田區" data-type="authorized" data-search="sqhk00022 小米之家中國（香港）馬鞍山新港城中心授權店 馬鞍山新港城中心授權店 授權店 新界 沙田區 馬鞍山鞍祿街18號新港城中心2樓2216號舖 馬鞍山鞍祿街18號新港城中心2樓2216號舖，沙田區，新界，香港 +852 24780088 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00022">SQHK00022</span>
     <span class="type-tag">授權店</span>
@@ -768,8 +812,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00022" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="馬鞍山鞍祿街18號新港城中心2樓2216號舖，沙田區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00046" data-id="SQHK00046" data-region="新界" data-district="沙田區" data-type="authorized" data-search="sqhk00046 小米之家中國（香港）大圍圍方授權店 大圍圍方授權店 授權店 新界 沙田區 大圍車公廟路18號圍方3樓330號鋪 大圍車公廟路18號圍方3樓330號鋪，沙田區，新界，香港 +852 23122261 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00046" data-id="SQHK00046" data-state="active" data-region="新界" data-district="沙田區" data-type="authorized" data-search="sqhk00046 小米之家中國（香港）大圍圍方授權店 大圍圍方授權店 授權店 新界 沙田區 大圍車公廟路18號圍方3樓330號鋪 大圍車公廟路18號圍方3樓330號鋪，沙田區，新界，香港 +852 23122261 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00046">SQHK00046</span>
     <span class="type-tag">授權店</span>
@@ -784,8 +829,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00046" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="大圍車公廟路18號圍方3樓330號鋪，沙田區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00047" data-id="SQHK00047" data-region="新界" data-district="沙田區" data-type="authorized" data-search="sqhk00047 小米之家中國（香港）沙田置富第一城授權店 沙田置富第一城授權店 授權店 新界 沙田區 置富第一城g02號舖 置富第一城g02號舖，沙田區，新界，香港 +852 29977232 星期一至日 10:30-20:30">
+<article class="store-card" id="store-SQHK00047" data-id="SQHK00047" data-state="active" data-region="新界" data-district="沙田區" data-type="authorized" data-search="sqhk00047 小米之家中國（香港）沙田置富第一城授權店 沙田置富第一城授權店 授權店 新界 沙田區 置富第一城g02號舖 置富第一城g02號舖，沙田區，新界，香港 +852 29977232 星期一至日 10:30-20:30">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00047">SQHK00047</span>
     <span class="type-tag">授權店</span>
@@ -800,8 +846,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00047" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="置富第一城G02號舖，沙田區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00010" data-id="SQHK00010" data-region="新界" data-district="荃灣區" data-type="authorized" data-search="sqhk00010 小米之家中國（香港）荃灣區荃灣廣場授權店 荃灣區荃灣廣場授權店 授權店 新界 荃灣區 荃灣大壩街4號荃灣廣場2樓271號鋪 荃灣大壩街4號荃灣廣場2樓271號鋪，荃灣區，新界，香港 +852 2346 8555 星期一至五 11:00-21:00（星期六至日未提供）">
+<article class="store-card" id="store-SQHK00010" data-id="SQHK00010" data-state="active" data-region="新界" data-district="荃灣區" data-type="authorized" data-search="sqhk00010 小米之家中國（香港）荃灣區荃灣廣場授權店 荃灣區荃灣廣場授權店 授權店 新界 荃灣區 荃灣大壩街4號荃灣廣場2樓271號鋪 荃灣大壩街4號荃灣廣場2樓271號鋪，荃灣區，新界，香港 +852 2346 8555 星期一至五 11:00-21:00（星期六至日未提供）">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00010">SQHK00010</span>
     <span class="type-tag">授權店</span>
@@ -816,8 +863,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00010" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="荃灣大壩街4號荃灣廣場2樓271號鋪，荃灣區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00026" data-id="SQHK00026" data-region="新界" data-district="荃灣區" data-type="authorized" data-search="sqhk00026 小米之家中國（香港）荃灣悅來坊授權店 荃灣悅來坊授權店 授權店 新界 荃灣區 荃華街3號悅來坊g層g5號舖 荃華街3號悅來坊g層g5號舖，荃灣區，新界，香港 +852 27891333 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00026" data-id="SQHK00026" data-state="active" data-region="新界" data-district="荃灣區" data-type="authorized" data-search="sqhk00026 小米之家中國（香港）荃灣悅來坊授權店 荃灣悅來坊授權店 授權店 新界 荃灣區 荃華街3號悅來坊g層g5號舖 荃華街3號悅來坊g層g5號舖，荃灣區，新界，香港 +852 27891333 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00026">SQHK00026</span>
     <span class="type-tag">授權店</span>
@@ -832,8 +880,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00026" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="荃華街3號悅來坊G層G5號舖，荃灣區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00035" data-id="SQHK00035" data-region="新界" data-district="荃灣區" data-type="authorized" data-search="sqhk00035 小米之家中國（香港）荃灣海之戀商場授權店 荃灣海之戀商場授權店 授權店 新界 荃灣區 荃灣大河道100號海之戀商場1樓1053號鋪 荃灣大河道100號海之戀商場1樓1053號鋪，荃灣區，新界，香港 +852 23609666 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00035" data-id="SQHK00035" data-state="active" data-region="新界" data-district="荃灣區" data-type="authorized" data-search="sqhk00035 小米之家中國（香港）荃灣海之戀商場授權店 荃灣海之戀商場授權店 授權店 新界 荃灣區 荃灣大河道100號海之戀商場1樓1053號鋪 荃灣大河道100號海之戀商場1樓1053號鋪，荃灣區，新界，香港 +852 23609666 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00035">SQHK00035</span>
     <span class="type-tag">授權店</span>
@@ -848,8 +897,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00035" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="荃灣大河道100號海之戀商場1樓1053號鋪，荃灣區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00044" data-id="SQHK00044" data-region="新界" data-district="荃灣區" data-type="authorized" data-search="sqhk00044 小米之家中國（香港）荃灣荃錦中心授權店 荃灣荃錦中心授權店 授權店 新界 荃灣區 青山公路荃灣段342號荃錦中心 青山公路荃灣段342號荃錦中心，荃灣區，新界，香港 +852 28138198 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00044" data-id="SQHK00044" data-state="active" data-region="新界" data-district="荃灣區" data-type="authorized" data-search="sqhk00044 小米之家中國（香港）荃灣荃錦中心授權店 荃灣荃錦中心授權店 授權店 新界 荃灣區 青山公路荃灣段342號荃錦中心 青山公路荃灣段342號荃錦中心，荃灣區，新界，香港 +852 28138198 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00044">SQHK00044</span>
     <span class="type-tag">授權店</span>
@@ -864,8 +914,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00044" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="青山公路荃灣段342號荃錦中心，荃灣區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00006" data-id="SQHK00006" data-region="新界" data-district="葵青區" data-type="authorized" data-search="sqhk00006 小米之家中國（香港）葵芳新都會廣場授權店 葵芳新都會廣場授權店 授權店 新界 葵青區 葵芳興芳路223號新都會廣場4樓494-496號鋪 葵芳興芳路223號新都會廣場4樓494-496號鋪，葵青區，新界，香港 +852 3709 2163 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00006" data-id="SQHK00006" data-state="active" data-region="新界" data-district="葵青區" data-type="authorized" data-search="sqhk00006 小米之家中國（香港）葵芳新都會廣場授權店 葵芳新都會廣場授權店 授權店 新界 葵青區 葵芳興芳路223號新都會廣場4樓494-496號鋪 葵芳興芳路223號新都會廣場4樓494-496號鋪，葵青區，新界，香港 +852 3709 2163 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00006">SQHK00006</span>
     <span class="type-tag">授權店</span>
@@ -880,8 +931,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00006" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="葵芳興芳路223號新都會廣場4樓494-496號鋪，葵青區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00027" data-id="SQHK00027" data-region="新界" data-district="葵青區" data-type="authorized" data-search="sqhk00027 小米之家中國（香港）葵青區青衣城授權店 葵青區青衣城授權店 授權店 新界 葵青區 青衣青敬路31號青衣城3樓303號舖 青衣青敬路31號青衣城3樓303號舖，葵青區，新界，香港 +852 63196776 星期一至日 11:00-21:00">
+<article class="store-card" id="store-SQHK00027" data-id="SQHK00027" data-state="active" data-region="新界" data-district="葵青區" data-type="authorized" data-search="sqhk00027 小米之家中國（香港）葵青區青衣城授權店 葵青區青衣城授權店 授權店 新界 葵青區 青衣青敬路31號青衣城3樓303號舖 青衣青敬路31號青衣城3樓303號舖，葵青區，新界，香港 +852 63196776 星期一至日 11:00-21:00">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00027">SQHK00027</span>
     <span class="type-tag">授權店</span>
@@ -896,8 +948,9 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00027" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="青衣青敬路31號青衣城3樓303號舖，葵青區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article>
-<article class="store-card" id="store-SQHK00036" data-id="SQHK00036" data-region="新界" data-district="葵青區" data-type="authorized" data-search="sqhk00036 小米之家中國（香港）葵涌石蘺商場授權店 葵涌石蘺商場授權店 授權店 新界 葵青區 葵涌大隴街110號石蘺商場地下b009號鋪 葵涌大隴街110號石蘺商場地下b009號鋪，葵青區，新界，香港 +852 25081333 星期一至日 10:30-20:30">
+<article class="store-card" id="store-SQHK00036" data-id="SQHK00036" data-state="active" data-region="新界" data-district="葵青區" data-type="authorized" data-search="sqhk00036 小米之家中國（香港）葵涌石蘺商場授權店 葵涌石蘺商場授權店 授權店 新界 葵青區 葵涌大隴街110號石蘺商場地下b009號鋪 葵涌大隴街110號石蘺商場地下b009號鋪，葵青區，新界，香港 +852 25081333 星期一至日 10:30-20:30">
   <div class="card-top">
     <span class="store-no" title="店號 SQHK00036">SQHK00036</span>
     <span class="type-tag">授權店</span>
@@ -912,15 +965,17 @@ footer p + p { margin-top:.25rem; }
     <a class="mini" href="https://www.mi.com/hk/store/xiaomi-store/detail/SQHK00036" target="_blank" rel="noopener">官方頁</a>
     <button type="button" class="mini copy" data-addr="葵涌大隴街110號石蘺商場地下B009號鋪，葵青區，新界，香港" title="複製完整地址">複製地址</button>
   </div>
+  
 </article></div>
 </section>
+
     <div class="empty" id="empty">沒有符合條件的門市，請調整篩選。</div>
   </main>
 </div>
 
 <footer>
-  <p>小米之家（香港）門市資料自動抓取自小米香港官網店舖位置頁（go.buy.mi.com／authorizedstore）。資料更新：2026年10月29日・共 41 間。</p>
-  <p>店號前綴：<b>MIHK</b> = 直營店、<b>SQHK</b> = 授權店。營業時間與電話以官方門市公告為準。本頁載入時間：<span id="load-time">—</span></p>
+  <p>小米之家（香港）門市資料自動抓取自小米香港官網店舖位置頁（go.buy.mi.com／authorizedstore）。資料更新：2026年10月30日・在架 41 間。</p>
+  <p>店號前綴：<b>MIHK</b> = 直營店、<b>SQHK</b> = 授權店。從官方店舖頁消失的門市會保留 30 天並標示「原網頁已移除」，之後移入頁底「已閉店」。營業時間與電話以官方公告為準。本頁載入時間：<span id="load-time">—</span></p>
 </footer>
 
 <script>

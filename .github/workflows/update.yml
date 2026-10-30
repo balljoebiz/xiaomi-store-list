@@ -27,15 +27,21 @@ jobs:
       - name: Build store page
         run: node build-xiaomi-html.js
 
+      # 一致性掃描（A–J）。只作報告，不阻擋更新：單一資料異常不應讓頁面停止更新。
+      - name: Consistency scan (report only)
+        continue-on-error: true
+        run: node scripts/scan-consistency.js
+
       - name: Commit if changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- index.html xiaomi-stores.json; then
+          # 用 status 而非 diff：store-history.json 首次產生時是 untracked，diff 看不到
+          if [ -z "$(git status --porcelain -- index.html xiaomi-stores.json store-history.json)" ]; then
             echo "資料未變，不產生 commit。"
             exit 0
           fi
-          COUNT=$(node -e "console.log(require('./xiaomi-stores.json').count)")
-          git add index.html xiaomi-stores.json
-          git commit -m "更新小米之家門市資料（${COUNT} 間）"
+          STATS=$(node -e "const j=require('./xiaomi-stores.json');console.log(j.activeCount+' 間在架・'+j.removedCount+' 已移除・'+j.closedCount+' 已閉店')")
+          git add index.html xiaomi-stores.json store-history.json   # history 必須 commit，否則 30 天計時會重置
+          git commit -m "更新小米之家門市資料（${STATS}）"
           git push
